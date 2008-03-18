@@ -411,7 +411,7 @@ div#fundo_iframe
 
 /* Balão do Google Maps */
 div.infowindow div.lateral {margin-left:68px; margin-top:16px;}
-div.infowindow p.cartola {margin:0; padding:0; color:#999;}
+div.infowindow p.cartola {margin:0; padding:0; color:#999; font-variant: small-caps}
 div.infowindow p.status {margin:10px 0 0 0; padding:0; color:#999;}
 div.infowindow h2 {font-size:10pt; padding:0 0 2px 0; margin:0; border-bottom:1px solid #999;}
 div.infowindow p.entidade {font-size:10pt; font-style:italic; margin:0 0 8px; padding:0;}
