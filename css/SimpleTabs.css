@@ -1,0 +1,50 @@
+div#box_tabinfo
+{
+  display:none;
+}
+.tab-wrapper
+{
+	padding:2px;
+	background-color:#FFF;
+}
+
+.tab-container
+{
+  padding:10px;
+  overflow:auto;
+}
+
+.tab-menu
+{
+	list-style:none;
+	padding:2px 0;
+	clear:both;
+	font-size:12px;
+	margin:0;
+	line-height:19px;
+	background-color:#354C8D;
+}
+.tab-menu li
+{
+	display:inline;
+	margin:0 6px 0 0;
+}
+.tab-menu li a
+{
+	padding:4px 6px;
+	background-color:#E3E3F0;
+	color:#222;
+	text-decoration:none;
+	border-bottom:1px transparent;
+}
+.tab-menu li a:hover,
+.tab-menu li a:focus
+{
+	background-color:#FAEC8F;
+}
+.tab-menu li.tab-selected a
+{
+	background-color:#FFF;
+	border-bottom:1px solid #FFF;
+  font-weight:bold;
+}

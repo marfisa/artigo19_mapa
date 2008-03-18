@@ -1,0 +1,27 @@
+html, body
+{ 
+	font-family:Tahoma, Arial, Helvetica, sans-serif;
+	padding:2px 6px;
+	margin:0;
+}
+
+h1 {padding:4px; font-size:18pt; border-bottom:2px solid #000;}
+
+h2 {}
+
+h3 {clear:both; margin:6px 0 0 0; padding:4px; font-size:12pt;}
+
+table {width:95%; border-bottom:2px solid #666; margin:0 4px 4px 30px}
+
+td {padding:2px; font-size:10pt; vertical-align:top;}
+
+td.nome
+{
+  font-weight:bold;
+  width:25%;
+}
+
+td.valor
+{
+  width:75px;
+}
