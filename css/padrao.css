@@ -269,12 +269,12 @@ div#div_resultados ul li
   padding-left:20px;
 }
 
-div#div_resultados ul li.licenciado
+ul li.licenciado
 {
   background:url(icone-bolinha-licenciado.png) no-repeat 3px 2px;
 }
 
-div#div_resultados ul li.naolicenciado
+ul li.naolicenciado
 {
   background:url(icone-bolinha-naolicenciado.png) no-repeat 3px 2px;
 }
@@ -477,6 +477,60 @@ ul.autocompleter-choices li.autocompleter-selected
   color:#FFF;
 }
 
+div#legendaMapa
+{
+  border:1px solid #000;
+  display:block;
+  position:absolute;
+  background-color:#FFF;
+  filter:alpha(opacity=80);
+  -moz-opacity:.80;
+  opacity:.80;
+}
+div#legendaMapa .titulo{
+	background-color:#01639e;
+	color:#FFF;
+	display:block;
+	padding:2px 8px 3px;
+	text-decoration:none;
+}
+
+div#legendaMapa a
+{
+    color:#009;
+}
+
+div#legendaMapa ul, div#legendaMapa li{
+	margin:0px;
+	padding:7px;
+	list-style:none;
+}
+div#legendaMapa li{
+	padding:2px 0px 2px 0px;
+}
+div#legendaMapa li.bg{
+	padding:2px 0px 2px 20px;
+}
+div#legendaMapa li a{
+	text-decoration:none;
+}
+
+div#legendaMapa a.selecionado
+{
+    font-weight:bold;
+    text-decoration:underline;
+}
+
+div#legendaMapa div.cor
+{
+    margin:2px 6px 0 0;
+    float:left;
+    height:7px;
+    width:7px;
+    border:1px solid #999;
+}
+
+
 div#aLegenda
 {
   border:1px solid #000;
@@ -533,4 +587,40 @@ ul#ulLegenda li img
 {
   margin:0 6px 0 2px;
   vertical-align:-40%;
+}
+
+.balao_uf h2
+{
+	font-size:19px !important;
+	color:#01639e;
+	margin:0px 5px 10px 5px !important;
+	
+}
+.balao_uf p{
+	margin:5px 5px 5px 5px;
+	font-size:14px;
+}
+
+table.info
+{
+    border:1px solid #333;
+    background-color:#FFF;
+    margin-bottom:15px;
+}
+
+table.info th,table.info td
+{
+    padding:2px 4px;
+}
+
+table.info th
+{
+    font-weight:bold;
+    background-color:#354C8D;
+    color:#FFF;
+}
+
+table.info tr.c2 td
+{
+    background-color:#EEE;
 }

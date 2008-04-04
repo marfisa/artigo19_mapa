@@ -93,15 +93,18 @@
 
   while($telec = mysql_fetch_array($resBusca))
   {
+  
+    if ($telec['licenciado'])
+        $icone = "lic";
+    else
+        $icone = "nlic";
+  
   	$jsonOutput .= "\t\t{\r\n";
   	$jsonOutput .= "\t\t\t\"id\": {$telec['ID']},\r\n";
   	$jsonOutput .= "\t\t\t\"nom\": \"" . limpaString($telec['razao_social']) . "\",\r\n";
   	$jsonOutput .= "\t\t\t\"mun\": \"" . limpaString($telec['municipio']) . "\",\r\n";
   	$jsonOutput .= "\t\t\t\"end\": \"" . limpaString($telec['endereco']) . "\",\r\n";
-    $jsonOutput .= "\t\t\t\"lic\": \"" . limpaString($telec['licenciado']) . "\",\r\n";
-    //$jsonOutput .= "\t\t\t\"can\": " . limpaString($telec['canal']) . ",\r\n";
-    //$jsonOutput .= "\t\t\t\"fre\": " . limpaString($telec['frequencia']) . ",\r\n";
-    //$jsonOutput .= "\t\t\t\"ind\": \"" . limpaString($telec['indicador']) . "\",\r\n";
+    $jsonOutput .= "\t\t\t\"ico\": \"" . $icone . "\",\r\n";
   	$jsonOutput .= "\t\t\t\"coo\": new GLatLng({$telec['latitude']},{$telec['longitude']})\r\n";
   	$jsonOutput .= "\t\t},\r\n";
 

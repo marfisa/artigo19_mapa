@@ -30,34 +30,132 @@ var estadosPontos = {
 'TO' : [new GLatLng(-5.353521, -48.702393), new GLatLng(-5.626919, -48.142090), new GLatLng(-6.620957, -48.702393), new GLatLng(-6.915521, -49.196777), new GLatLng(-7.569437, -49.394531), new GLatLng(-7.798079, -49.185791), new GLatLng(-8.754795, -49.515381), new GLatLng(-9.719886, -50.196533), new GLatLng(-10.671404, -50.603027), new GLatLng(-12.747516, -50.603027), new GLatLng(-12.758232, -50.295410), new GLatLng(-13.218556, -49.383545), new GLatLng(-12.801088, -49.196777), new GLatLng(-12.747516, -48.834229), new GLatLng(-13.132979, -48.581543), new GLatLng(-13.389620, -47.713623), new GLatLng(-12.972442, -47.768555), new GLatLng(-13.229251, -47.438965), new GLatLng(-12.929615, -46.241455), new GLatLng(-11.566144, -46.351318), new GLatLng(-11.275387, -46.669922), new GLatLng(-10.250060, -45.780029), new GLatLng(-10.141932, -46.395264), new GLatLng(-9.015302, -47.043457), new GLatLng(-8.331083, -46.812744), new GLatLng(-8.276727, -46.527100), new GLatLng(-7.983078, -46.472168), new GLatLng(-7.896030, -46.647949), new GLatLng(-8.059230, -47.032471), new GLatLng(-7.177201, -47.735596), new GLatLng(-6.369894, -47.362061), new GLatLng(-5.473832, -47.537842), new GLatLng(-5.156599, -48.460693), new GLatLng(-5.353521, -48.702393)]
 };
 
+var relacoes = [
+    {
+        'nome':'Rádios por milhão de habitantes',
+        'cor':'#009900',
+        'dividendo':'pon',
+        'divisor':'pop',
+        'divisor_divisor':1000000
+    },
+    {
+        'nome':'Rádios por município',
+        'cor':'#990000',
+        'dividendo':'pon',
+        'divisor':'mun',
+        'divisor_divisor':1
+    },
+    {
+        'nome':'Número total de rádios',
+        'cor':'#000099',
+        'dividendo':'pon',
+        'divisor':1,
+        'divisor_divisor':1
+    }
+];
+
+var rel_global = 0;
+
 /******************************************/
 
-function criaPoligonoEstado(estado)
+function criaPoligonoEstado(estado, relacao, opacidade)
 {
-  var polyEstado = new GPolygon(estadosPontos[estado], "#000000", 4, 0.15, "#009900", estadosEstatisticas[estado].opa*0.40);
-  /* feature_todo
+  var polyEstado = new GPolygon(estadosPontos[estado], "#000000", 4, 0.15, relacoes[relacao].cor, opacidade*0.40);
   GEvent.addListener(polyEstado, "click", function(latlng)
     {
+      htmlBalao  = '<div class="balao_uf">';
+      htmlBalao += '<h2>'+estadosEstatisticas[estado].nom+'</h2>';
+      htmlBalao += '<p><strong>População:</strong> ' + estadosEstatisticas[estado].pop + '</p>';
+      htmlBalao += '<p><strong>Pontos de cultura: </strong>' + estadosEstatisticas[estado].pon + '</p>';
+      htmlBalao += '<p><strong>Municípios: </strong>' + estadosEstatisticas[estado].mun + '</p>';
+      htmlBalao += '<p><strong style="color:' + relacoes[relacao].cor + '">' + relacoes[relacao].nome + ': </strong>' + Math.round(estadosEstatisticas[estado].rel*Math.pow(10,4))/Math.pow(10,4) + '</p>';
+      htmlBalao += '</div>';
+
       if (!boolProcuraRealizada)
-        map.openInfoWindow(latlng, "Voce clicou em: " + estado + ' ' + estadosEstatisticas[estado].pop);
+        map.openInfoWindow(latlng, htmlBalao);
     }
   );
-  */
+
   return polyEstado;
 }
 
 /******************************************/
 
-function desenhaEstados()
+function removeShapesEstados()
 {
+    if ($('legendaMapa')) $('legendaMapa').remove();
+}
+
+/******************************************/
+
+function criaShapesEstados(relacaoInicial)
+{
+
+    innerHTML = '<div class="titulo">Legenda dos estados</div><ul>';
+    for (i=0; i<3; i++)
+        innerHTML += '<li><a href="javascript:desenhaEstados('+ i + ');" style="color:' + relacoes[i].cor + '"><div class="cor" style="background-color:' + relacoes[i].cor + '"></div>' + relacoes[i].nome + '</a></li>';
+    innerHTML += '</ul>';
+
+    var idLegenda = new Element('div', {'id':'legendaMapa'})
+        .setHTML(innerHTML)
+        .injectAfter($('map'));
+
+    atualizaPosicaoLegenda();
+    desenhaEstados(relacaoInicial);
+}
+
+/******************************************/
+
+function atualizaPosicaoLegenda()
+{
+    if ($('legendaMapa'))
+    {
+        var gMapCoords = $('map').getCoordinates();
+        var legCoords = $('legendaMapa').getCoordinates();
+
+        $('legendaMapa').setStyles(
+          {
+            'left':gMapCoords.left + 10,
+            'top':gMapCoords.bottom - legCoords.height - 50
+          }
+        );
+    }
+}
+
+/******************************************/
+
+function desenhaEstados(relacao)
+{
+  legArray = $$('div#legendaMapa a')
+  legArray.removeClass('selecionado');
+  legArray[relacao].addClass('selecionado');
+
+  rel_global = relacao;
+  map.clearOverlays();
+
   new Ajax('includes/AjaxEstadosEstatisticas.php', {method: 'get', onComplete:
     function(jsonResult)
     {
+      relacao = rel_global;
       estadosEstatisticas = eval("(" + jsonResult + ")");
-      
+      relacaoMax = 0;
+
       for (estado in estadosPontos)
       {
-        var polyEstado = criaPoligonoEstado(estado);
+        if ($type(relacoes[relacao].divisor) == 'string')
+            divisor = estadosEstatisticas[estado][relacoes[relacao].divisor];
+        else
+            divisor = relacoes[relacao].divisor;
+
+        estadosEstatisticas[estado].rel = estadosEstatisticas[estado][relacoes[relacao].dividendo]/(divisor/relacoes[relacao].divisor_divisor);
+
+        if (estadosEstatisticas[estado].rel > relacaoMax && estado != 'DF')
+            relacaoMax = estadosEstatisticas[estado].rel;
+      }
+
+      for (estado in estadosPontos)
+      {
+        var polyEstado = criaPoligonoEstado(estado, relacao, estadosEstatisticas[estado].rel/relacaoMax);
         map.addOverlay(polyEstado);
       }
     }

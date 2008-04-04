@@ -6,6 +6,7 @@ var matRadios = new Array;
 var lat = null, lon = null, end = null;
 var slideEndereco, slidePchaves;
 var painelMaximizado = 'procura';
+var legendaFixa = false;
 
 window.addEvent('domready', Inicia);
 
@@ -226,8 +227,14 @@ function AjustaTamanho()
       }
     );
 
+    /* Atualiza posicao do botao e caixa de legenda */
+    atualizaLegendaPos();
+    
+    /* Atualiza a posicao da legenda dos estados */
+    atualizaPosicaoLegenda();
+
   $('container_info')
-    .setStyle('width', window.getWidth()-200)
+    .setStyle('width', window.getWidth()-500)
     .setStyle('height', window.getHeight()-160);
   var infoCoords = $('container_info').getCoordinates();
   $('container_info')
@@ -334,9 +341,20 @@ function processandoToggle(funcao)
   }
 }
 
+/******************************************/
+
+function zera_legenda(){
+	legenda['lic'] = 0;
+	legenda['nlic'] = 0;
+}
+
+/******************************************/
+
 function buscaTelecentros()
 {
 
+  zera_legenda()
+  
   var url = "includes/AjaxBusca.php?";
 
   if ($('select_uf').getValue() != 0)
@@ -407,7 +425,7 @@ function processaPontos(jsonData)
     
     liTag = new Element('li');
     
-    if (jsonData.markers[i].lic == "1")
+    if (jsonData.markers[i].ico == "lic")
       liTag.addClass("licenciado");
     else
       liTag.addClass("naolicenciado");
@@ -423,6 +441,8 @@ function processaPontos(jsonData)
     liTag.injectInside(ulTag);
     criaPonto(jsonData.markers[i]);
 	}
+	
+	criaLegenda();
 	
 	if (jsonData.markers.length)
 	{
@@ -512,3 +532,34 @@ function defineEndOrigem(objEnd)
 }
 
 /******************************************/
+function atualizaLegendaPos()
+{
+  if ($('aLegenda') && $('ulLegenda'))
+  {
+    var gMapCoords = $('map').getCoordinates();
+    
+    $('ulLegenda').setStyle('display','');
+    var ulLeCoords = $('ulLegenda').getCoordinates();
+    if (!legendaFixa)
+      $('ulLegenda').setStyle('display','none');
+    
+    var aLegCoords = $('aLegenda').getCoordinates();
+    
+    $('aLegenda').setStyles(
+      {
+        'left':gMapCoords.right - aLegCoords.width - 8,
+        'top':gMapCoords.top + 34
+      }
+    );
+            
+    $('ulLegenda').setStyles(
+      {
+        'left':gMapCoords.right - ulLeCoords.width - 8,
+        'top':gMapCoords.top + aLegCoords.height + 34
+      }
+    );
+  }
+}
+
+/******************************************/
+

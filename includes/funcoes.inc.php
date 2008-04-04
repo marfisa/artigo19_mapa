@@ -26,7 +26,7 @@
   $sqlGetPopulacaoEstados =
     "SELECT
       u.uf,
-      SUM(m.populacao) as populacao
+      SUM(m.populacao) as contagem
     FROM
       ipso_municipio m,
       ipso_uf u
@@ -37,18 +37,34 @@
     ORDER BY
       u.uf";
 
-  $sqlGetTelecentrosEstados =
+  $sqlGetPontosEstados =
     "SELECT
       u.uf,
-      COUNT(*) as radios
+      u.nome,
+      COUNT(*) as contagem
     FROM
-      `radios_comunitarias` t
+      `radios_comunitarias` r
     INNER JOIN
-      `ipso_municipio` m ON t.`COD_MUNICIPIO` = m.codigo
+      `ipso_municipio` m ON r.cod_municipio = m.codigo
     INNER JOIN
       `ipso_uf` u ON m.`id_uf` = u.id_uf
     WHERE
       `VISIVEL` = 1
+    GROUP BY
+      m.id_uf
+    ORDER BY
+      u.uf";
+
+    
+$sqlGetMunicipiosEstados =
+    "SELECT
+      u.uf,
+      COUNT(m.codigo) as contagem
+    FROM
+      ipso_municipio m,
+      ipso_uf u
+    WHERE
+      m.id_uf = u.id_uf
     GROUP BY
       m.id_uf
     ORDER BY

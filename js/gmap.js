@@ -4,6 +4,8 @@ var map;
 var matPontos = new Array();
 var markCasa;
 var boolProcuraRealizada = false;
+var legenda_itens = new Array('lic', 'nlic');
+var legenda = new Array();
 
 var icoLicenciado = new GIcon();
 var icoNaoLicenciado = new GIcon();
@@ -31,6 +33,8 @@ function inciaGoogleMap()
     map.addControl(new GOverviewMapControl());
     map.addControl(new GScaleControl());
   	map.checkResize();
+  	
+  	criaShapesEstados(2);
 	}
 	else
 		alert('Infelizmente seu navegador não é compatível com o GoogleMaps.');
@@ -64,10 +68,16 @@ function criaPonto(ponto)
 	var MarkerOptions = new Object();
 	MarkerOptions.title = ponto.nom;
 
-  if (ponto.lic == "1")
-    MarkerOptions.icon = icoLicenciado;
-  else
-    MarkerOptions.icon = icoNaoLicenciado;
+  switch(ponto.ico){
+    case 'lic':
+        MarkerOptions.icon = icoLicenciado;
+	    legenda['lic'] = legenda['lic'] + 1;
+    break;
+    case 'nlic':
+        MarkerOptions.icon = icoNaoLicenciado;
+    	legenda['nlic'] = legenda['nlic'] + 1;
+    break;
+  }
 
 	var marker = new GMarker(ponto.coo, MarkerOptions);
 	bounds.extend(ponto.coo);
@@ -97,6 +107,7 @@ function limpaMapa()
   map.clearOverlays();
   criaPontoCasa();
   bounds = new GLatLngBounds();
+  removeShapesEstados();
 }
 
 /******************************************/
@@ -203,3 +214,26 @@ function exibeDetalhesPonto(jsonResult)
 
 	matPontos[jsonData.marker.id].openInfoWindowTabsHtml(infoTabs);
 }
+
+/******************************************/
+
+function criaLegenda()
+{
+  var html = '';
+  html += '<div class="titulo">Legenda dos marcadores</div><ul>';
+  
+  if(legenda['lic'] > 0)
+  	html += '<li class="licenciado bg">Rádios licenciadas ('+legenda['lic']+')</li>';
+  
+  if(legenda['nlic'] > 0)
+  	html += '<li class="naolicenciado bg">Rádios não licenciadas ('+legenda['nlic']+')</li>';
+ 
+	var idLegenda = new Element('div', {'id':'legendaMapa'})
+        .setHTML(html)
+        .injectAfter($('map'));
+
+    atualizaPosicaoLegenda();
+ 
+}
+
+/******************************************/

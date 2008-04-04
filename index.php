@@ -13,6 +13,7 @@
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=<?php echo($GoogleMapsKey); ?>"></script>
 <script language="JavaScript" type="text/JavaScript" src="js/mootools-release-1.11.js"></script>
+<script language="JavaScript" type="text/JavaScript" src="js/estados.js"></script>
 <script language="JavaScript" type="text/JavaScript" src="js/principal.js"></script>
 <script language="JavaScript" type="text/JavaScript" src="js/gmap.js"></script>
 <script language="JavaScript" type="text/JavaScript" src="js/autocompleter.js"></script>
@@ -82,13 +83,118 @@
   			</div>
   			<h4 title="Totais">Totais</h4>
   			<div>
-	          	<h3>Em construção...</h3>
-				<p>...</p>
+	          	<h3>Por estado</h3>
+				<p>
+				    <table cellspace="1" border="0" class="info">
+				        <tr>
+				            <th>Estado</td>
+				            <th>Licenciadas</td>
+				            <th>Não licenciadas</td>
+				            <th>Total</td>
+				        </tr>
+				
+				<?
+
+
+    $sqlPontosPorEstado =
+        "SELECT
+          u.nome,
+          COUNT(licenciado) as lic,
+          (COUNT(*)-COUNT(licenciado)) as nlic,
+          COUNT(*) as total
+        FROM
+          `radios_comunitarias` r
+        INNER JOIN
+          `ipso_municipio` m ON r.cod_municipio = m.codigo
+        INNER JOIN
+          `ipso_uf` u ON m.`id_uf` = u.id_uf
+        WHERE
+          `VISIVEL` = 1
+        GROUP BY
+          m.id_uf
+        ORDER BY
+          u.uf";
+          
+    $resPontos = query($sqlPontosPorEstado);
+    
+    $corFundo = " class=\"c2\"";
+    
+    while($ponto = mysql_fetch_array($resPontos))
+    {
+        echo("				        <tr{$corFundo}>\r\n");
+        echo("				            <td>" . utf8_encode($ponto['nome']) . "</td>\r\n");
+        echo("				            <td>" . utf8_encode($ponto['lic']) . "</td>\r\n");
+        echo("				            <td>" . utf8_encode($ponto['nlic']) . "</td>\r\n");
+        echo("				            <td>" . utf8_encode($ponto['total']) . "</td>\r\n");
+        echo("				        </tr>\r\n");
+        
+        if ($corFundo == " class=\"c2\"")
+            $corFundo = "";
+        else
+            $corFundo = " class=\"c2\"";
+    }
+				?>
+				    </table>
+				</p>
+	          	<h3>Por região</h3>
+                <p>
+				    <table cellspace="1" border="0" class="info">
+				        <tr>
+				            <th>Região</td>
+				            <th>Licenciadas</td>
+				            <th>Não licenciadas</td>
+				            <th>Total</td>
+				        </tr>
+				<?
+
+
+    $sqlPontosPorRegiao =
+        "SELECT
+          re.nome,
+          COUNT(licenciado) as lic,
+          (COUNT(*)-COUNT(licenciado)) as nlic,
+          COUNT(*) as total
+        FROM
+          `radios_comunitarias` r
+        INNER JOIN
+          `ipso_municipio` m ON r.cod_municipio = m.codigo
+        INNER JOIN
+          `ipso_uf` u ON m.`id_uf` = u.id_uf
+        INNER JOIN
+          `ipso_regiao` re ON u.`id_regiao` = re.id_regiao
+        WHERE
+          `VISIVEL` = 1
+        GROUP BY
+          re.nome
+        ORDER BY
+          re.nome";
+          
+    $resPontos = query($sqlPontosPorRegiao);
+    
+    while($ponto = mysql_fetch_array($resPontos))
+    {
+        echo("				        <tr{$corFundo}>\r\n");
+        echo("				            <td>{$ponto['nome']}</td>\r\n");
+        echo("				            <td>{$ponto['lic']}</td>\r\n");
+        echo("				            <td>{$ponto['nlic']}</td>\r\n");
+        echo("				            <td>{$ponto['total']}</td>\r\n");
+        echo("				        </tr>\r\n");
+
+        if ($corFundo == " class=\"c2\"")
+            $corFundo = "";
+        else
+            $corFundo = " class=\"c2\"";
+
+    }
+				?>
+				    </table>
+
+                </p>
   			</div>
   			<h4 title="Totais">Artigo 19</h4>
   			<div>
 	          	<h3>Sobre o Artigo 19</h3>
-				<p>Em construção</p>
+				<p>Colocar informações sobre o Article 19 aqui.</p>
   			</div>
 
   		</div>
