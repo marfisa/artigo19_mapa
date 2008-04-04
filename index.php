@@ -22,49 +22,75 @@
 <body>
   <div id="container_info">
   		<div id="box_tabinfo">
-  			<h4 title="Just a warum-up ...">Metodologia</h4>
+  			<h4 title="Metodologia">Metodologia</h4>
   			<div>
   				<h3>Metedologia usada no mapeamento</h3>
   				<a href="javascript:void(0)" id="box_fechar">fechar</a>
-  				<p>Nu hahta nuquéra oio. Sa yulma rotelë axa, ama ma aratar cenvéla, mi terca cuilë mat. Be hérincë úquétima atalantëa tul, cé vaxë celë avá. Mer oa ainu raita, san as tata talta rotelë. Milya aicassë terpellië tir na, us cen raxë lasta carcassë, cu nimba carcassë iel. Rip at minda murmë avamarwa. Tasar nalanta ata cu, suhto mettarë yen or.
-  				<p>Ma luinë linwelë maquetta cua, é tyávë hísië sir. Mantil cuivië pel en, be nor alqua caima fairë. Nu can rambë yulda, tam quén rámië anwavë nó. Cen nasta wilwarin an.
-  				<p>Nu rondë entarda pel, axa tasar sairon nu. Hala halda orosta nís us, rondë turma nauva et sai. Ar tië yaru eques. Us ettë nolya pereldar lia, as vanima atalantëa etéraettul ëar. Cuilë quesset an árë.
-  				<p>Nu hahta nuquéra oio. Sa yulma rotelë axa, ama ma aratar cenvéla, mi terca cuilë mat. Be hérincë úquétima atalantëa tul, cé vaxë celë avá. Mer oa ainu raita, san as tata talta rotelë. Milya aicassë terpellië tir na, us cen raxë lasta carcassë, cu nimba carcassë iel. Rip at minda murmë avamarwa. Tasar nalanta ata cu, suhto mettarë yen or.
-  				<p>Ma luinë linwelë maquetta cua, é tyávë hísië sir. Mantil cuivië pel en, be nor alqua caima fairë. Nu can rambë yulda, tam quén rámië anwavë nó. Cen nasta wilwarin an.
-  				<p>Nu rondë entarda pel, axa tasar sairon nu. Hala halda orosta nís us, rondë turma nauva et sai. Ar tië yaru eques. Us ettë nolya pereldar lia, as vanima atalantëa etéraettul ëar. Cuilë quesset an árë.
-  				<p>Nu hahta nuquéra oio. Sa yulma rotelë axa, ama ma aratar cenvéla, mi terca cuilë mat. Be hérincë úquétima atalantëa tul, cé vaxë celë avá. Mer oa ainu raita, san as tata talta rotelë. Milya aicassë terpellië tir na, us cen raxë lasta carcassë, cu nimba carcassë iel. Rip at minda murmë avamarwa. Tasar nalanta ata cu, suhto mettarë yen or.
-  				<p>Ma luinë linwelë maquetta cua, é tyávë hísië sir. Mantil cuivië pel en, be nor alqua caima fairë. Nu can rambë yulda, tam quén rámië anwavë nó. Cen nasta wilwarin an.
-  				<p>Nu rondë entarda pel, axa tasar sairon nu. Hala halda orosta nís us, rondë turma nauva et sai. Ar tië yaru eques. Us ettë nolya pereldar lia, as vanima atalantëa etéraettul ëar. Cuilë quesset an árë.
-  				<p>Nu hahta nuquéra oio. Sa yulma rotelë axa, ama ma aratar cenvéla, mi terca cuilë mat. Be hérincë úquétima atalantëa tul, cé vaxë celë avá. Mer oa ainu raita, san as tata talta rotelë. Milya aicassë terpellië tir na, us cen raxë lasta carcassë, cu nimba carcassë iel. Rip at minda murmë avamarwa. Tasar nalanta ata cu, suhto mettarë yen or.
-  				<p>Ma luinë linwelë maquetta cua, é tyávë hísië sir. Mantil cuivië pel en, be nor alqua caima fairë. Nu can rambë yulda, tam quén rámië anwavë nó. Cen nasta wilwarin an.
-  				<p>Nu rondë entarda pel, axa tasar sairon nu. Hala halda orosta nís us, rondë turma nauva et sai. Ar tië yaru eques. Us ettë nolya pereldar lia, as vanima atalantëa etéraettul ëar. Cuilë quesset an árë.
+  				<p>O Mapa das rádios comunitárias apresenta todos os serviços de radiodifusão comunitária, licenciados e não licenciados, autorizados pelo Ministério das Comunicações. De acordo com o Decreto nº 2.615 de 3 de junho de 1998, artigo 8º, "licença para funcionamento de estação é o documento que habilita a estação a funcionar em caráter definitivo, e que explicita a condição de não possuir a emissora direito à proteção contra interferências causadas por estações de telecomunicações e de radiodifusão regularmente instaladas".</p>
+  				<p>Os dados foram coletados no Sistema de Informação dos Serviços de Comunicação de Massa, da Agência Nacional de Telecomunicações - Anatel, disponível no site: <a href="http://sistemas.anatel.gov.br/siscom">http://sistemas.anatel.gov.br/siscom</a>. As estações foram buscadas no referido sistema estado por estado. O serviço pesquisado foi Radiodifusão Comunitária (231). </p>
+  				<p>A consulta inicial foi feita na tabela de entidades outorgadas em janeiro de 2008. A atualização do mapa acontecerá periodicamente, a cada (dois meses?). Possíveis diferenças nas informações são conseqüência da autorização de novas entidades a operar o serviço de radiodifusão comunitária conforme a conclusão de avisos de habilitação em andamento. Para mais informações ou colaboração escreva para <a href="mailto:radioscomunitarias@utopia.org.br">radioscomunitarias@utopia.org.br</a>.</p>
+  				<p>O Mapa das rádios comunitárias não faz referências se as estações autorizadas estão em funcionamento ou não. Tampouco há informações sobre rádios que estão em processo de habilitação ou não legalizadas.</p>
   			</div>
 
-  			<h4 title="The best Lorem Ipsum ever!">Sites relacionados</h4>
+  			<h4 title="Sites relacionados">Sites relacionados</h4>
   			<div>
-          <h3>Sites que tem tudo a ver</h3>
-  				Aman ollo oa áva, occo onótima túr ré, ep pio linwelë andamunda. Erya heru ai ván, felmë cenda onótima et apa, nurmë teren raica nór vá. Lasta ontani nahamna be col, oa mir hwarma tareldar, ana yá heru velca. Ser na aratar haloitë, laito vanima ep ana. Inqua palmë orosta órë or, óla tussa luhta tó, ílë nurtalom nainanyéna nú. Aha linga teletelya silninquita yá.
-  				Lár sa milya etéraettul, oa ehtë fassë elendë axo, pé enga fassë centa ran. Mer na nírë aiquen carcassë, cú ván vaxë nessa leryalehtya, men lenca ataqua avatyara ve. Núta soron torma tir vá, vá yarë tumna fum, é tul mavor hanta ambalë. Alqua foina etelotya uë lir, harë mitya cú yúl. Mi yúl laira vilya, sa sondë raita carca vai. Sí lis raita calya, ep tixë alahasta íta. Ser suhto laira ya, nir eques vëaner ma, rá vaina faina sar.
-  				Her nahamna yernacolla oa. Sië ai mettarë wilwarin lindelëa. Yanen foina calina ve lau. Má cëa occo amorta tellaurë, to car manu telco hyarmenya. Lú fion hecil rámië hón.
+	          	<h3>Legislação</h3>
+  				<p><a href="http://www6.senado.gov.br/legislacao/ListaTextoIntegral.action?id=126659">Lei nº 9.612, de 19 de fevereiro de 1998.</a><br>Institui o Serviço de Radiodifusão Comunitária e dá outras providências.</p>
+  				<p><a href="http://www6.senado.gov.br/legislacao/ListaTextoIntegral.action?id=127437">Decreto nº 2.615, de 03 de junho de 1998.</a><br>Aprova o Regulamento do Serviço de Radiodifusão Comunitária.</p>
+  				<p><a href="http://www.onu-brasil.org.br/documentos_direitoshumanos.php">Declaração Universal dos Direitos Humanos</a></p>
+				<h3>Sites relacionados</h3>
+				<p><a href="http://www.livreacesso.net">http://www.livreacesso.net</a></p>
+				<p><a href="http://www.ipso.org.br">http://www.ipso.org.br</a></p>
+				<p><a href="http://www.article19.org">http://www.article19.org</a></p>
+				<p><a href="http://www.onid.org.br">http://www.onid.org.br</a></p>
+				<p><a href="http://www.dataipso.utopia.org.br">http://www.dataipso.utopia.org.br</a></p>
+				<p><a href="http://www.mapasdarede.utopia.org.br">http://www.mapasdarede.utopia.org.br</a></p>
+				<p><a href="http://www.anatel.gov.br">http://www.anatel.gov.br</a></p>
+				<p><a href="http://www.mc.gov.br">http://www.mc.gov.br</a></p>
   			</div>
 
-  			<h4 title="Here is another tab!">Créditos</h4>
+  			<h4 title="Créditos">Créditos</h4>
   			<div>
-          <h3>Quem está por trás de tudo isso...</h3>
-  				Palmë lindelëa cu írë. Nan us aiwë ronyo. Uë cíla pahta palúrë úrë. Sa ainu nurmë yat, tó hap palis sanda valarauko, be ílë norna yulma terpellië. Vairë lingwë lir ré. Simpina mirilya ta yen.
-  				Yá apa lappa vórima, nat ainu valinor sa. Eru us tata canta, ep rauko onótima vén. Fëa liptë calpa tareldar an, axa yá varta amorta hantalë. Raica nonwa indómë as wén, cala onótima an hón. Et poica sundo axa, mól cé caima pelentul. Fánë talta tol rá.
-  				Mi oio tihta cotumo arandur, núta lorna teletelya rin nó. Sir heru hérë er, her ve tanga calta, lia uë orva mírëa artaquetta. Úvë pé hamba leuca voronwë, hanta tella nostalë men sí. Harna antorya ambarmetta et caw, low tó lauta ohtatyaro. Arca rimpë nurtalom nó nén. Quén carca mornië er áya, an rië tárië mirilya andamunda.
-  				Assa tanga terenë tec to, nu lia nirya tundo tellaurë. Vá ollo valta rotelë cor. Táp rámië valdë né. Ataqua amaurëa be net. Sú nur tussa mantil.
+	          	<h3>Créditos</h3>
+  				<p>O Mapa das rádios comunitárias é uma iniciativa da Artigo 19 no Brasil em parceria com o Instituto de Pesquisas e Projetos Sociais e Tecnológicos - IPSO.</p>
+
+				<h5>Artigo 19</h5>
+				<p>Edição de conteúdo:</p>
+				<ul>
+					<li>Jamila Venturini (textos e XXX)</li>
+					<li>Paula Martins</li>
+					<li>Mila Molina</li>
+				</ul>
+
+				<h5>IPSO</h5>
+				<p>Desenvolvimento e programação:</p>
+				<ul>
+					<li>Carlos Seabra (coordenação)</li>
+					<li>Cauê Thenório (desenvolvimento e programação)</li>
+					<li>Mariane Ottati (colaboração)</li>
+					<li>Laura Tresca (textos e colaboração)</li>
+					<li>Diana Pellegrini (colaboração)</li>
+				</ul>
+
   			</div>
 
-  			<h4 title="Here is another tab!">Ajuda</h4>
+  			<h4 title="Fale conosco">Fale conosco</h4>
   			<div>
-          <h3>Como usar? O que posso fazer? Está tudo aqui...</h3>
-  				Palmë lindelëa cu írë. Nan us aiwë ronyo. Uë cíla pahta palúrë úrë. Sa ainu nurmë yat, tó hap palis sanda valarauko, be ílë norna yulma terpellië. Vairë lingwë lir ré. Simpina mirilya ta yen.
-  				Yá apa lappa vórima, nat ainu valinor sa. Eru us tata canta, ep rauko onótima vén. Fëa liptë calpa tareldar an, axa yá varta amorta hantalë. Raica nonwa indómë as wén, cala onótima an hón. Et poica sundo axa, mól cé caima pelentul. Fánë talta tol rá.
-  				Mi oio tihta cotumo arandur, núta lorna teletelya rin nó. Sir heru hérë er, her ve tanga calta, lia uë orva mírëa artaquetta. Úvë pé hamba leuca voronwë, hanta tella nostalë men sí. Harna antorya ambarmetta et caw, low tó lauta ohtatyaro. Arca rimpë nurtalom nó nén. Quén carca mornië er áya, an rië tárië mirilya andamunda.
-  				Assa tanga terenë tec to, nu lia nirya tundo tellaurë. Vá ollo valta rotelë cor. Táp rámië valdë né. Ataqua amaurëa be net. Sú nur tussa mantil.
+          	<h3>Fale conosco</h3>
+				<p>Você pode entrar em contato conosco através do e-mail: <a href="mailto:radioscomunitarias@utopia.org.br">radioscomunitarias@utopia.org.br</a>.</p>
+				<p>Qualquer dúvida, sugestão, reclamação ou elogio será muito bem recebido. Sua contribuição é importante para o andamento e aprimoramento do nosso trabalho.</p>
   			</div>
+  			<h4 title="Totais">Totais</h4>
+  			<div>
+	          	<h3>Em construção...</h3>
+				<p>...</p>
+  			</div>
+  			<h4 title="Totais">Artigo 19</h4>
+  			<div>
+	          	<h3>Sobre o Artigo 19</h3>
+				<p>Em construção</p>
+  			</div>
+
   		</div>
   </div>
   <div id="cabecalho">
@@ -129,7 +155,7 @@
       </td>
     </tr>
   </table>
-  <div id="rodape"><a href="http://www.ipso.org.br" target="_blank">IPSO - Instituto de Pesquisas e Projetos Sociais e Tecnol&oacute;gicos</a> e <a href="http://www.governoeletronico.gov.br" target="_blank">Minist&eacute;rio do Planejamento, Or&ccedil;amento e Gest&atilde;o / Secretaria de Log&iacute;stica e Tecnologia da Informa&ccedil;&atilde;o</a></div>
+  <div id="rodape"><a href="http://www.ipso.org.br" target="_blank">IPSO - Instituto de Pesquisas e Projetos Sociais e Tecnol&oacute;gicos</a>&nbsp; &#0149; &nbsp;<a href="http://www.article19.org/work/regions/latin-america/portuguese.html" target="_blank">Article 19 - Campanha global pela liberdade de expressão</a></div>
 
 </body>
 </html>

@@ -1,4 +1,6 @@
-/* Variáveis globais */
+/*
+
+*//* Variáveis globais */
 var projSelecionados = new Array;
 var matRadios = new Array;
 var lat = null, lon = null, end = null;
@@ -24,6 +26,7 @@ function Inicia()
 	$$('a#a_maisinfo, a#box_fechar').addEvent('click', toggleInformacoes);
 
   var endCompleter = new Autocompleter.Local($('txt_endereco'),{});
+  var infoTabs = new SimpleTabs($('box_tabinfo'), {entrySelector: 'h4'});
   inciaGoogleMap();
 }
 
@@ -33,7 +36,6 @@ function toggleInformacoes(e)
 {
   if ($('container_info').getStyle('visibility') == 'hidden')
   {
-    var infoTabs = new SimpleTabs($('box_tabinfo'), {entrySelector: 'h4'});
     $('container_info')
       .effect('opacity', {duration: 1000, transition:Fx.Transitions.linear})
       .start(0,1);
@@ -45,6 +47,7 @@ function toggleInformacoes(e)
     var fundoIframe = new Element('div', {'id':'fundo_iframe'})
       .setStyles({'width':window.getWidth(), 'height':window.getHeight()})
       .injectBefore($('cabecalho'))
+	  .addEvent('click', function(e) {toggleInformacoes(e);})
       .effect('opacity', {duration: 1000, transition:Fx.Transitions.linear})
       .start(0,0.6);
   }
@@ -326,6 +329,8 @@ function processandoToggle(funcao)
               funcao();
           }
       }).start(0,0.75);
+	  
+
   }
 }
 

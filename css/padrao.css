@@ -40,10 +40,10 @@ div#cabecalho
 div#cabecalho h1
 {
 	background:url(cabecalho-logo.gif) no-repeat 0 4px;
-	font-size:14pt;
-	height:32px;
+	font-size:20pt;
+	height:38px;
 	margin:0 0 0 20px;
-	padding:22px 0 2px 120px;
+	padding:16px 0 2px 330px;
 	float:left;
   font-family: Arial, Tahoma, Sans Serif
 }
@@ -389,6 +389,11 @@ h3
   padding:2px 0;
 }
 
+h5{
+	font-size:11pt;
+	margin:20px 0 10px 0;
+}
+
 div#container_info
 {
   background-color:#FFF;
@@ -413,12 +418,12 @@ div#fundo_iframe
 div.infowindow div.lateral {margin-left:68px; margin-top:16px;}
 div.infowindow p.cartola {margin:0; padding:0; color:#999; font-variant: small-caps}
 div.infowindow p.status {margin:10px 0 0 0; padding:0; color:#999;}
-div.infowindow h2 {font-size:10pt; padding:0 0 2px 0; margin:0; border-bottom:1px solid #999;}
+div.infowindow h2 {font-size:10pt; padding:0 0 2px 0; margin:0 0 10px;}
 div.infowindow p.entidade {font-size:10pt; font-style:italic; margin:0 0 8px; padding:0;}
 /* div.infowindow div.icone {width:64px; height:64px; background-image:url(../img/logo_infowindow.png); float:left; margin:8px 0 0 0;} */
 div.infowindow dt {float:left; width:80px; font-weight:bold; padding-bottom:2px}
 div.infowindow dd {padding-bottom:2px}
-div.infowindow p.endereco {border-top:1px solid #999; margin:4px 0 0 0; margin-bottom:4px; padding:2px 0 0 0;}
+div.infowindow p.endereco {margin:10px 0 0 0; margin-bottom:4px; padding:2px 0 0 0;}
 div.infowindow p.contatos {margin:0; padding:0; color:#666;}
 div.infowindow p.internet {margin:0; padding:0; color:#666;}
 div.infowindow a {color:#003b6f; text-decoration:none;}
@@ -427,16 +432,17 @@ div.infowindow a:hover {text-decoration:underline; background-color:#F3F3FF;}
 /* dataIPSO */
 
 div.infowindow div.dataipso {margin-top:10px;}
-div.infowindow div.dataipso table.cabecalho {border:1px solid #666; width:380px;}
+div.infowindow table {border:1px solid #666;}
+div.infowindow div.dataipso table.cabecalho {width:380px;}
 div.infowindow div.dataipso div.overflow {height: 50px; width: 100%; overflow:auto;}
-div.infowindow div.dataipso table.conteudo {border:1px solid #666; border-top:none; border-bottom:none; width:380px;}
-div.infowindow div.dataipso table.borda_inferior {border-top:1px solid #666; width:380px; font-size:7pt; text-align:right;}
+div.infowindow div.dataipso table.conteudo {border-top:none; border-bottom:none; width:380px;}
+div.infowindow div.dataipso table.borda_inferior {border:none; border-top:1px solid #666; width:380px; font-size:7pt; text-align:right;}
 div.infowindow div.dataipso table.borda_inferior td {padding-top:4px;}
-div.infowindow div.dataipso th {background-color:#354C8D; padding:2px; color:#FFF;}
+div.infowindow th {background-color:#354C8D; padding:2px; color:#FFF;}
 div.infowindow div.dataipso .indice {width:34%;}
 div.infowindow div.dataipso .valor {width:22%; text-align:right !important;}
-div.infowindow div.dataipso tr td {background-color:#FFF; padding:2px;}
-div.infowindow div.dataipso tr.c2 td {background-color:#EEE; padding:2px;}
+div.infowindow td {background-color:#FFF; padding:2px;}
+div.infowindow tr.c2 td {background-color:#EEE; padding:2px 4px;}
 
 /* Auto completer */
 

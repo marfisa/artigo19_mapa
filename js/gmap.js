@@ -141,14 +141,19 @@ function exibeDetalhesPonto(jsonResult)
   tabPontoHtml += '<p class="cartola">' + licenciada + '</p>';
   tabPontoHtml += '<h2>' + jsonData.marker.nom + '</h2>';
 
-  tabPontoHtml += '<dl>';
-  tabPontoHtml += '<dt>Canal:</dt><dd>' + jsonData.marker.can + '</dd>';
-  tabPontoHtml += '<dt>Freqüência:</dt><dd>' + jsonData.marker.fre + '</dd>';
-  tabPontoHtml += '<dt>Indicador:</dt><dd>' + jsonData.marker.ind + '</dd>';
-  tabPontoHtml += '</dl>';
+  tabPontoHtml += '<table width="60%">';
+  tabPontoHtml += '<tr>';
+  tabPontoHtml += '<th>Canal</th><th>Freqüência</th><th>Indicador</th>';
+  tabPontoHtml += '</tr>';
+  tabPontoHtml += '<tr class="c2">';
+  tabPontoHtml += '<td style="text-align:center;">' + jsonData.marker.can + '</td>';
+  tabPontoHtml += '<td style="text-align:center;">' + jsonData.marker.fre + '</td>';
+  tabPontoHtml += '<td style="text-align:center;">' + jsonData.marker.ind + '</td>';
+  tabPontoHtml += '</tr>';
+  tabPontoHtml += '</table>';
 
   tabPontoHtml += '<p class="endereco">';
-	if (jsonData.marker.end != "") tabPontoHtml += jsonData.marker.end + ' - ';
+	if (jsonData.marker.end != "") tabPontoHtml += jsonData.marker.end + '<br>';
 	tabPontoHtml += jsonData.marker.mun + ' - ' + jsonData.marker.est + '</p>';
 
   tabPontoHtml += '</div>';
