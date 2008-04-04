@@ -34,7 +34,7 @@ $opts['sort_field'] = array('ID');
 
 // Number of records to display on the screen
 // Value of -1 lists all records in a table
-$opts['inc'] = 15;
+$opts['inc'] = 50;
 
 // Options you wish to give the users
 // A - add,  C - change, P - copy, V - view, D - delete,
@@ -67,7 +67,7 @@ $opts['cgi']['prefix']['data']      = 'PME_data_';
 /* Get the user's default language and use it if possible or you can
    specify particular one you want to use. Refer to official documentation
    for list of available languages. */
-$opts['language'] = 'PT-BR' . '-UTF8';
+$opts['language'] = 'PT-BR';
 
 /* Table-level filter capability. If set, it is included in the WHERE clause
    of any generated SELECT statement in SQL query. This gives you ability to
@@ -158,6 +158,11 @@ $opts['fdd']['uf'] = array(
 );
 $opts['fdd']['licenciado'] = array(
   'name'     => 'Licenciado',
+  'values2'  =>
+    array(
+        '1' =>  'Sim',
+        '0' =>  'Não',
+    ),  
   'select'   => 'T',
   'maxlen'   => 4,
   'sort'     => true
@@ -182,7 +187,7 @@ $opts['fdd']['canal'] = array(
   'sort'     => true
 );
 $opts['fdd']['frequencia'] = array(
-  'name'     => 'Frequencia',
+  'name'     => 'Freqü&ecirc;ncia',
   'options'  => 'ACPDV',
   'select'   => 'T',
   'maxlen'   => 12,
@@ -196,7 +201,12 @@ $opts['fdd']['indicador'] = array(
   'sort'     => true
 );
 $opts['fdd']['visivel'] = array(
-  'name'     => 'Visivel',
+  'name'     => 'Vis&iacute;vel',
+  'values2'  =>
+    array(
+        '1' =>  'Sim',
+        '0' =>  'Não',
+    ),
   'select'   => 'T',
   'maxlen'   => 4,
   'sort'     => true
