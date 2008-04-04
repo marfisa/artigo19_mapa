@@ -1,0 +1,72 @@
+	hr.pme-hr
+	{
+		border: 0px solid;
+		padding: 0px;
+		margin: 0px;
+		border-top-width:
+		1px; height: 1px;
+	}
+	
+	table.pme-main
+	{
+		border: #999 1px solid;
+		border-collapse: collapse;
+		border-spacing: 0px;
+		width: 850px;
+		font-size:8pt;
+		margin:10px auto;
+	}
+
+	table.pme-navigation
+	{
+		border: #004d9c 0px solid;
+		border-collapse: collapse;
+		border-spacing: 0px;
+		width: 850px;
+		margin:0 auto;
+		font-size:8pt;
+	}
+
+	th.pme-header, th.pme-header-numero	{ border: #c4d6e7 1px solid; padding: 3px 4px; background: #e5f2ff; }
+	
+	th.pme-header a, th.pme-header-numero a {color:#557594; text-decoration:none;}
+	th.pme-header a:hover, th.pme-header-numero a:hover {color:#ED1C24; text-decoration:none;}
+	
+	td.pme-cell-0 {background-color:#f2f8fd;}
+	td.pme-cell-1 {background-color:#fdfeff;}
+	
+	td.pme-key-0, td.pme-key-0-numero, td.pme-value-0, td.pme-value-0-numero, td.pme-help-0, td.pme-navigation-0, td.pme-cell-0,
+	td.pme-key-1, td.pme-key-1-numero, td.pme-value-1, td.pme-value-1-numero, td.pme-help-0, td.pme-navigation-1, td.pme-cell-1,
+	td.pme-cell-0-numero, td.pme-cell-1-numero, td.pme-sortinfo, td.pme-filter {border: #FFF 1px solid; padding: 3px;}
+	td.pme-buttons { text-align: left; padding:2px 0;}
+	td.pme-message { text-align: center;}
+	td.pme-stats   { text-align: right;}
+	
+	tr.pme-header input, tr.pme-filter input, .pme-input-1, .pme-input-0 {font-size:8pt;}
+	input.pme-input-1, input.pme-input-0, textarea.pme-input-0, textarea.pme-input-1 {padding:1px 2px; width:400px;}
+	input.pme-input-1-numero, input.pme-input-0-numero {padding:1px 2px; width:160px;},
+	option {padding:1px 2px;}
+	
+	tr.pme-row-0, tr.pme-row-0-numero {background-color:#f2f8fd;}
+	tr.pme-row-1, tr.pme-row-1-numero {background-color:#fdfeff;}
+	
+	tr.pme-filter  {text-align:center;}
+	
+
+  td.pme-buttons input, td.pme-buttons input
+  {
+    padding:1px 4px;
+    /*
+    border-top:1px solid #8bb7e2;
+    border-left:1px solid #8bb7e2;
+    border-right:1px solid #000;
+    border-bottom:1px solid #000;
+    background-color:#225383;
+    color:#FFF;
+    */
+    font-size:8pt;
+  }
+  
+	td.pme-buttons select option {padding:0 4px;}
+	
+	.pme-input-1, .pme-input-0 {border:1px solid #225383;}

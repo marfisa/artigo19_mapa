@@ -1,0 +1,6 @@
+AuthName "Administração Mapa das rádios comunitárias" 
+AuthType Basic 
+AuthUserFile .htpasswd 
+AuthGroupFile /dev/null 
+require valid-user
+Options +Indexes
