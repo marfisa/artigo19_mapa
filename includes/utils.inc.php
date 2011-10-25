@@ -1,33 +1,13 @@
 <?
-  require_once('funcoes.inc.php');
+require_once('funcoes.inc.php');
 
-	if (strpos($_SERVER['HTTP_HOST'],"localhost") !== FALSE)
-	{
-		$UTIL['wwwroot'] = "http://localhost/artigo19";
-		$UTIL['serverroot'] = $_SERVER['DOCUMENT_ROOT'] . "/artigo19";
+if (!file_exists(__DIR__ . '/config.php')) {
+	die('Você precisa criar o arquivo de configuração includes/config.php.');
+}
 
-		$UTIL['DBASE_HOST'] = "localhost";
-		$UTIL['DBASE_USER'] = "root";
-		$UTIL['DBASE_PASS'] = "";
-		$UTIL['DBASE_BASE'] = "artigo19";
+require_once('config.php');
 
-		$GoogleMapsKey = "ABQIAAAAd4IiStmbGuEm5Q_daTE5rhT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQLzjchxBWBNahbmv9tdB7oGHDItg";
-	}
-	elseif (strpos($_SERVER['HTTP_HOST'],"utopia.org.br") !== FALSE)
-	{
-		$UTIL['wwwroot'] = "http://artigo19.utopia.org.br/";
-		$UTIL['serverroot'] = $_SERVER['DOCUMENT_ROOT'];
-
-		$UTIL['DBASE_HOST'] = "localhost";
-		$UTIL['DBASE_USER'] = "";
-		$UTIL['DBASE_PASS'] = "";
-		$UTIL['DBASE_BASE'] = "";
-
-		$GoogleMapsKey = "ABQIAAAAd4IiStmbGuEm5Q_daTE5rhTHa1AIKuPNVtEA9Jf7G-lAhb4FRBQEQVlYgxycuI_OswCVIsHuKFzSkg";
-	}
-
-	$UTIL['DEBUG'] = 1;
-	session_start();
+session_start();
 
 /* ----------------- VERIFICACOES----------------*/
 
