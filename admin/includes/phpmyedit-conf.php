@@ -17,10 +17,11 @@
  */
 
 // MySQL host name, user name, password, database, and table
-$opts['hn'] = 'localhost';
-$opts['un'] = 'root';
-$opts['pw'] = '';
-$opts['db'] = 'artigo19';
+require_once('../includes/config.php');
+$opts['hn'] = $UTIL['DBASE_HOST'];
+$opts['un'] = $UTIL['DBASE_USER'];
+$opts['pw'] = $UTIL['DBASE_PASS'];
+$opts['db'] = $UTIL['DBASE_BASE'];
 $opts['tb'] = 'radios_comunitarias';
 
 // Name of field which is the unique key
@@ -187,7 +188,7 @@ $opts['fdd']['canal'] = array(
   'sort'     => true
 );
 $opts['fdd']['frequencia'] = array(
-  'name'     => 'Freqü&ecirc;ncia',
+  'name'     => 'Frequ&ecirc;ncia',
   'options'  => 'ACPDV',
   'select'   => 'T',
   'maxlen'   => 12,
