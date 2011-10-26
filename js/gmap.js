@@ -195,7 +195,6 @@ function exibeDetalhesPonto(jsonResult)
 		tabDataIPSOHtml += '<tr><td>Esperan&ccedil;a de vida</td><td class="valor">' + jsonData.municipio.esperanca_de_vida + '</td><td class="valor">' + jsonData.estado.esperanca_de_vida + '</td><td class="valor">' + jsonData.pais.esperanca_de_vida + '</td></tr>';
 		tabDataIPSOHtml += '</table>';
 		tabDataIPSOHtml += '</div>';
-		tabDataIPSOHtml += '<table border="0" cellspacing="0" cellpadding="0" class="borda_inferior"><tr><td><a href="http://www.dataipso.utopia.com.br/tiki-idh.php?municipio=' + jsonData.municipio.codigo + '" target="_blank">Consultar mais indicadores deste munic&iacute;pio no DataIPSO</a></td></tr></table>';
 		tabDataIPSOHtml += '</div>';
 		tabDataIPSOHtml += '</div>';
 	}
