@@ -77,7 +77,7 @@ $resPonto = query(sprintf($sqlGetRadioById,$_GET['id']));
   
 /* Gravar registro  */
 
-$logIP = $_SERVER['HTTP_X_FORWARDED_FOR'] ?  '"' . $_SERVER['HTTP_X_FORWARDED_FOR'] . '"' : '"' . $_SERVER['REMOTE_ADDR'] . '"';
+$logIP = isset($_SERVER['HTTP_X_FORWARDED_FOR']) ?  '"' . $_SERVER['HTTP_X_FORWARDED_FOR'] . '"' : '"' . $_SERVER['REMOTE_ADDR'] . '"';
 
 $sqlLog  = "INSERT INTO `log_utilizacao` VALUES(NULL, NOW()";
 $sqlLog .= ", $logIP";
@@ -91,11 +91,6 @@ $jsonOutput  = "{\r\n\t\"marker\":\r\n";
 $jsonOutput .= "\t{\r\n";
 
 if($myPonto = @mysql_fetch_array($resPonto)) {
-	$email = explode(" ",limpaString($myPonto['EMAIL']));
-	if (strpos($email[0],",")) {
-		$email[0] = substr($email[0],0,-1);
-	}
-
 	$jsonOutput .= "\t\t\"id\": {$myPonto['ID']},\r\n";
 
   	$jsonOutput .= "\t\t\t\"nom\": \"" . limpaString($myPonto['razao_social']) . "\",\r\n";
