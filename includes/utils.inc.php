@@ -9,7 +9,7 @@ require_once('config.php');
 
 session_start();
 
-define('SITE_TITLE', 'Mapa das rádios comunitárias');
+define('SITE_TITLE', 'Mapa das r&aacute;dios comunit&aacute;rias');
 
 /* ----------------- VERIFICACOES----------------*/
 
