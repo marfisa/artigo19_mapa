@@ -14,56 +14,36 @@ function limpaString($string) {
 
 $sqlBusca = "SELECT ";
 
-if ($_GET['lat'] && $_GET['lon'] && $_GET['ntelec']) {
+if (isset($_GET['lat']) && isset($_GET['lon']) && isset($_GET['ntelec'])) {
 	$lat = $_GET['lat'];
 	$long = $_GET['lon'];
 	$ntelec = $_GET['ntelec'];
 	$sqlBusca .= "SQRT((({$lat}-t.`LATITUDE`)*({$lat}-t.`LATITUDE`))+(({$long}-t.`LONGITUDE`)*({$long}-t.`LONGITUDE`))) as DISTANCIA,";
 }
 
-$sqlBusca .= "t.* FROM `telecentros` t ";
+$sqlBusca .= "t.*, m.nome as municipio FROM `radios_comunitarias` t ";
 $sqlBusca .= "INNER JOIN `ipso_municipio` m ON t.COD_MUNICIPIO = m.codigo ";
 $sqlBusca .= "INNER JOIN `ipso_uf` u ON m.id_uf = u.id_uf ";
 $sqlBusca .= "WHERE ";
 
-if ($_GET['projetos']) {
-	$projetos = explode("|",$_GET['projetos']);
-	
-	$strProjetos = "";
-
-	$sqlBusca .= "(";
-	for ($i=0; $i<count($projetos); $i++)
-	{
-		$sqlBusca .= "(";
-		$sqlBusca .= "`PROJETO` = '{$projetos[$i]}' OR ";
-		$sqlBusca .= "`PROJETO` LIKE '{$projetos[$i]},%' OR ";
-		$sqlBusca .= "`PROJETO` LIKE '%,{$projetos[$i]},%' OR ";
-		$sqlBusca .= "`PROJETO` LIKE '%,{$projetos[$i]}'";
-		$sqlBusca .= ") OR ";
-	}
-
-	$sqlBusca = substr($sqlBusca, 0, -4);
-	$sqlBusca .= ") AND ";
-}
-
-if ($_GET['cidade']) {
+if (isset($_GET['cidade'])) {
 	$sqlBusca .= "(";
 	$sqlBusca .= "m.codigo = {$_GET['cidade']}";
 	$sqlBusca .= ") AND ";
-} elseif ($_GET['uf']) {
+} elseif (isset($_GET['uf'])) {
 	$sqlBusca .= "(";
 	$sqlBusca .= "u.uf = '{$_GET['uf']}'";
 	$sqlBusca .= ") AND ";
 }
 
-if ($_GET['pchave']) {
+if (isset($_GET['pchave'])) {
 	$palavraschave = explode(" ",$_GET['pchave']);
-	$camposSearch = array('TELECENTRO', 'ENTIDADE', 'BAIRRO', 'ENDERECO', 'TELEFONE', 'TELEFONE2', 'TELEFONE3', 'EMAIL', 'EMAIL2', 'EMAIL3');
+	$camposSearch = array('razao_social', 'endereco', 'indicador', 'frequencia');
 
 	$sqlBusca .= "(";
-	for ($i=0; $i<count($palavraschave); $i++) {
+	for ($i=0; $i < count($palavraschave); $i++) {
 		$sqlBusca .= "(";
-		for ($j=0; $j<count($camposSearch); $j++) {
+		for ($j=0; $j < count($camposSearch); $j++) {
 			$sqlBusca .= "(`{$camposSearch[$j]}` LIKE '%" . utf8_encode($palavraschave[$i]) . "%') OR ";
 		}
 		$sqlBusca = substr($sqlBusca, 0, -4);
@@ -74,46 +54,40 @@ if ($_GET['pchave']) {
 }
 $sqlBusca .="`VISIVEL` = 1 ORDER BY ";
 
-if ($_GET['lat'] && $_GET['lon']) {
+if (isset($_GET['lat']) && isset($_GET['lon'])) {
 	$sqlBusca .= "DISTANCIA, ";
 }
 
-$sqlBusca .="m.nome, t.TELECENTRO ";
+$sqlBusca .="m.nome, t.razao_social ";
 
-if ($_GET['lat'] && $_GET['lon']) {
+if (isset($_GET['lat']) && isset($_GET['lon'])) {
 	$sqlBusca .= "LIMIT 0, $ntelec";
 }
 		
-$resTelecentros = query($sqlBusca);
+$resBusca = query($sqlBusca);
 
 header("Content-Type: text/x-csv; charset=UTF-8;");
-header("Content-Disposition: attachment; filename=\"Telecentros.csv\";");
+header("Content-Disposition: attachment; filename=\"dados.csv\";");
 
-$CsvBody = utf8_decode('"Telecentro";"Projetos";"Entidade";"UF";"Município";"Endereço";"Bairro";"CEP";"Latitude";"Longitude";"Telefone";"Email";') . "\r\n";
+//$CsvBody = utf8_decode('"Razão social";"UF";"Município";"Endereço";"Bairro";"CEP";"Rádio licenciada?";"Canal";"Frequência";"Indicador";"Latitude";"Longitude";"Telefone";"Email";') . "\r\n";
+$CsvBody = utf8_decode('"Razão social";"UF";"Município";"Endereço";"Rádio licenciada?";"Canal";"Frequência";"Indicador";"Latitude";"Longitude"') . "\r\n";
 
-while ($telec = mysql_fetch_array($resTelecentros)) {
-	$CsvBody .= '"' . limpaString($telec['TELECENTRO']) . '";';
+while ($telec = mysql_fetch_array($resBusca)) {
+	$CsvBody .= '"' . limpaString($telec['razao_social']) . '";';
 
-	$projTelecentro = explode(",",$telec['PROJETO']);
-	$strProjetos = "";
-
-	for ($i=0; $i<count($projTelecentro); $i++) {
-		$myProjeto = mysql_fetch_array(query(sprintf($sqlGetProjetoById,$projTelecentro[$i])));
-		$strProjetos .= $myProjeto['NOME'] . ", ";
-	}
-	$strProjetos = substr($strProjetos, 0 , -2);
-
-	$CsvBody .= '"' . limpaString($strProjetos) . '";';
-	$CsvBody .= '"' . limpaString($telec['ENTIDADE']) . '";';
-	$CsvBody .= '"' . limpaString($telec['ESTADO']) . '";';
-	$CsvBody .= '"' . limpaString($telec['MUNICIPIO']) . '";';
-	$CsvBody .= '"' . limpaString($telec['ENDERECO']) . '";';
-	$CsvBody .= '"' . $telec['BAIRRO'] . '";';
-	$CsvBody .= '"' . $telec['CEP'] . '";';
-	$CsvBody .= '"' . $telec['LATITUDE'] . '";';
-	$CsvBody .= '"' . $telec['LONGITUDE'] . '";';
-	$CsvBody .= '"' . $telec['TELEFONE'] . '";';
-	$CsvBody .= '"' . $telec['EMAIL'] . '";';
+	$CsvBody .= '"' . (isset($telec['uf']) ? limpaString($telec['uf']) : '') . '";';
+	$CsvBody .= '"' . (isset($telec['municipio']) ? limpaString($telec['municipio']) : '') . '";';
+	$CsvBody .= '"' . (isset($telec['endereco']) ? limpaString($telec['endereco']) : '') . '";';
+	//$CsvBody .= '"' . (isset($telec['bairro']) ? $telec['bairro'] : '') . '";';
+	//$CsvBody .= '"' . (isset($telec['cep']) ? $telec['cep'] : '') . '";';
+	$CsvBody .= '"' . (isset($telec['licenciado']) ? 'Sim' : utf8_decode('Não')) . '";';
+	$CsvBody .= '"' . (isset($telec['canal']) ? $telec['canal'] : '') . '";';
+	$CsvBody .= '"' . (isset($telec['frequencia']) ? $telec['frequencia'] : '') . '";';
+	$CsvBody .= '"' . (isset($telec['indicador']) ? $telec['indicador'] : '') . '";';
+	$CsvBody .= '"' . (isset($telec['latitude']) ? $telec['latitude'] : '') . '";';
+	$CsvBody .= '"' . (isset($telec['longitude']) ? $telec['longitude'] : '') . '";';
+	//$CsvBody .= '"' . (isset($telec['telefone']) ? $telec['telefone'] : '') . '";';
+	//$CsvBody .= '"' . (isset($telec['email']) ? $telec['email'] : '') . '";';
 	$CsvBody .= "\r\n";
 }
 		
