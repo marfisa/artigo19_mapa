@@ -6,7 +6,7 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
 <head>
-<title>Mapa das r&aacute;dios comunit&aacute;rias</title>
+<title><?php echo SITE_TITLE;?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="css/padrao.css" rel="stylesheet" type="text/css">
 <link href="css/SimpleTabs.css" rel="stylesheet" type="text/css">

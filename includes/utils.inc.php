@@ -9,6 +9,8 @@ require_once('config.php');
 
 session_start();
 
+define('SITE_TITLE', 'Mapa das rádios comunitárias');
+
 /* ----------------- VERIFICACOES----------------*/
 
 	$MesAno[1] = "janeiro";

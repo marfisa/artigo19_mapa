@@ -7,11 +7,11 @@ header("Content-Type: text/html; charset=iso-8859-1;");
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>ONID: Mapa dos telecentros do Brasil</title>
+<title><?php echo SITE_TITLE;?></title>
 <link href="../css/imprime.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<h1>ONID: Mapa dos telecentros do Brasil</h1>
+<h1><?php echo SITE_TITLE;?></h1>
 <?php
 require_once('utils.inc.php');
 
