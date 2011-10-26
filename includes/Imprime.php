@@ -89,12 +89,8 @@ while ($telec = mysql_fetch_array($resBusca)) {
 
 	$CsvBody .= '<tr><td class="nome">Endere&ccedil;o:</td><td class="valor">';
 	
-	if (isset($telec['endereco']) && isset($telec['bairro'])) {
-		$CsvBody .= limpaString($telec['endereco']) . ' - ' . $telec['bairro'] . "<br>";
-	} else if (isset($telec['endereco'])) {
+	if (isset($telec['endereco'])) {
 		$CsvBody .= limpaString($telec['endereco']) . "<br>";
-	} else if (isset($telec['bairro'])) {
-		$CsvBody .= limpaString($telec['bairro']) . "<br>";
 	}
 
 	if (isset($telec['municipio']) && isset($telec['uf'])) {
