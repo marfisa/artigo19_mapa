@@ -20,7 +20,7 @@ if (isset($_GET['cidade'])) {
 	$sqlBusca .= "(";
 	$sqlBusca .= "m.codigo = {$_GET['cidade']}";
 	$sqlBusca .= ") AND ";
-} elseif ($_GET['uf']) {
+} elseif (isset($_GET['uf'])) {
 	$sqlBusca .= "(";
 	$sqlBusca .= "u.uf = '{$_GET['uf']}'";
 	$sqlBusca .= ") AND ";
