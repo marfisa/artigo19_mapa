@@ -11,6 +11,10 @@ if (isset($_GET['UF'])) {
 if ($uf != NULL) {
 	$resMunicipios = query(sprintf($sqlGetMunicipiosByCodUf,$uf));
 
+	if (!isset($jsonOutput)) {
+		$jsonOutput = '';
+	}
+	
 	$jsonOutput .= '    [' . "\r\n";
 
 	while ($myMunicipio = mysql_fetch_array($resMunicipios)) {

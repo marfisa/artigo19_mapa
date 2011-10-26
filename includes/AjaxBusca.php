@@ -4,7 +4,7 @@ header("Content-Type: text/plain; charset=UTF-8");
 
 $sqlBusca  = "SELECT ";
 
-if ($_GET['lat'] && $_GET['lon'] && $_GET['ntelec']) {
+if (isset($_GET['lat']) && isset($_GET['lon']) && isset($_GET['ntelec'])) {
 	$lat = $_GET['lat'];
 	$long = $_GET['lon'];
 	$ntelec = $_GET['ntelec'];
@@ -16,7 +16,7 @@ $sqlBusca .= "INNER JOIN `ipso_municipio` m ON t.COD_MUNICIPIO = m.codigo ";
 $sqlBusca .= "INNER JOIN `ipso_uf` u ON m.id_uf = u.id_uf ";
 $sqlBusca .= "WHERE ";
 
-if ($_GET['cidade']) {
+if (isset($_GET['cidade'])) {
 	$sqlBusca .= "(";
 	$sqlBusca .= "m.codigo = {$_GET['cidade']}";
 	$sqlBusca .= ") AND ";
@@ -26,7 +26,7 @@ if ($_GET['cidade']) {
 	$sqlBusca .= ") AND ";
 }
   
-if ($_GET['pchave']) {
+if (isset($_GET['pchave'])) {
 	$palavraschave = explode(" ",$_GET['pchave']);
 	$camposSearch = array('razao_social', 'endereco', 'indicador', 'frequencia');
 	
@@ -44,13 +44,13 @@ if ($_GET['pchave']) {
 }
 $sqlBusca .="`VISIVEL` = 1 ORDER BY ";
   
-if ($_GET['lat'] && $_GET['lon']) {
+if (isset($_GET['lat']) && isset($_GET['lon'])) {
 	$sqlBusca .= "DISTANCIA, ";
 }
 
 $sqlBusca .="m.nome, t.razao_social ";
   
-if ($_GET['lat'] && $_GET['lon']) {
+if (isset($_GET['lat']) && isset($_GET['lon'])) {
 	$sqlBusca .= "LIMIT 0, $ntelec";
 }
 
@@ -59,13 +59,13 @@ $count = 1;
 
 /* Gravar registro da pesquisa */
 
-$logIP = $_SERVER['HTTP_X_FORWARDED_FOR'] ? '"' . $_SERVER['HTTP_X_FORWARDED_FOR'] . '"' : '"' . $_SERVER['REMOTE_ADDR'] . '"';
-$logUF = $_GET['uf'] ? '"' . $_GET['uf'] . '"' : "NULL";
-$logMunicipio = $_GET['cidade'] ? $_GET['cidade'] : "NULL";
-$logEndereco = $_GET['end'] ? '"' . $_GET['end'] . '"' : "NULL";
-$logNProx = $_GET['ntelec'] ? $_GET['ntelec'] : "NULL";
-$logProjetos = $_GET['projetos'] ? '"' . $_GET['projetos'] . '"' : "NULL";
-$logPChave = $_GET['pchave'] ? '"' . $_GET['pchave'] . '"' : "NULL";
+$logIP = isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? '"' . $_SERVER['HTTP_X_FORWARDED_FOR'] . '"' : '"' . $_SERVER['REMOTE_ADDR'] . '"';
+$logUF = isset($_GET['uf']) ? '"' . $_GET['uf'] . '"' : "NULL";
+$logMunicipio = isset($_GET['cidade']) ? $_GET['cidade'] : "NULL";
+$logEndereco = isset($_GET['end']) ? '"' . $_GET['end'] . '"' : "NULL";
+$logNProx = isset($_GET['ntelec']) ? $_GET['ntelec'] : "NULL";
+$logProjetos = isset($_GET['projetos']) ? '"' . $_GET['projetos'] . '"' : "NULL";
+$logPChave = isset($_GET['pchave']) ? '"' . $_GET['pchave'] . '"' : "NULL";
 
 $sqlLog = "INSERT INTO `log_utilizacao` VALUES(NULL, NOW()";
 $sqlLog .= ", $logIP";
