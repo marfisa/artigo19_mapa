@@ -1,6 +1,6 @@
 AuthName "Administração Mapa das rádios comunitárias" 
 AuthType Basic 
-AuthUserFile .htpasswd 
+AuthUserFile /var/www/artigo19/admin/.htpasswd 
 AuthGroupFile /dev/null 
 require valid-user
 Options +Indexes
