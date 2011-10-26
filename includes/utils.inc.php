@@ -1,7 +1,7 @@
 <?
 require_once('funcoes.inc.php');
 
-if (!file_exists(__DIR__ . '/config.php')) {
+if (!file_exists(dirname(__FILE__) . '/config.php')) {
 	die('Você precisa criar o arquivo de configuração includes/config.php.');
 }
 
