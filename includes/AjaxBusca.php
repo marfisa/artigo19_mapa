@@ -116,7 +116,7 @@ echo($jsonOutput);
   
 /* Funções */
   
-function limpaString($string, $matrizBanco = FALSE)	{
+function limpaString($string)	{
 	if (substr($string, -2) == ', ') {
 		$string = substr($string, 0 , -2);
 	} elseif (substr($string, -1) == ',' || substr($string, -1) == ' ') {
