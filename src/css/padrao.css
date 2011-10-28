@@ -629,3 +629,10 @@ table.info tr.c2 td
 {
     background-color:#EEE;
 }
+
+a#box_fechar {
+	position: absolute;
+	color: white;
+	right: 10px;
+	top: 3px;
+}

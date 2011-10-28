@@ -22,11 +22,11 @@
 
 <body>
   <div id="container_info">
+  		<a href="javascript:void(0)" id="box_fechar">fechar</a>
   		<div id="box_tabinfo">
   			<h4 title="Metodologia">Metodologia</h4>
   			<div>
   				<h3>Metedologia usada no mapeamento</h3>
-  				<a href="javascript:void(0)" id="box_fechar">fechar</a>
   				<p>O Mapa das rádios comunitárias apresenta todos os serviços de radiodifusão comunitária, licenciados e não licenciados, autorizados pelo Ministério das Comunicações. De acordo com o Decreto nº 2.615 de 3 de junho de 1998, artigo 8º, "licença para funcionamento de estação é o documento que habilita a estação a funcionar em caráter definitivo, e que explicita a condição de não possuir a emissora direito à proteção contra interferências causadas por estações de telecomunicações e de radiodifusão regularmente instaladas".</p>
   				<p>Os dados foram coletados no Sistema de Informação dos Serviços de Comunicação de Massa, da Agência Nacional de Telecomunicações - Anatel, disponível no site: <a href="http://sistemas.anatel.gov.br/siscom">http://sistemas.anatel.gov.br/siscom</a>. As estações foram buscadas no referido sistema estado por estado. O serviço pesquisado foi Radiodifusão Comunitária (231). </p>
   				<p>A consulta inicial foi feita na tabela de entidades outorgadas em janeiro de 2008. A atualização do mapa acontecerá periodicamente, a cada (dois meses?). Possíveis diferenças nas informações são conseqüência da autorização de novas entidades a operar o serviço de radiodifusão comunitária conforme a conclusão de avisos de habilitação em andamento. Para mais informações ou colaboração escreva para <a href="mailto:radioscomunitarias@utopia.org.br">radioscomunitarias@utopia.org.br</a>.</p>
@@ -197,12 +197,11 @@
 
                 </p>
   			</div>
-  			<h4 title="Totais">Artigo 19</h4>
+  			<h4 title="Artigo 19">Artigo 19</h4>
   			<div>
 	          	<h3>Sobre o Artigo 19</h3>
 				<p>Colocar informações sobre o Article 19 aqui.</p>
   			</div>
-
   		</div>
   </div>
   <div id="cabecalho">
