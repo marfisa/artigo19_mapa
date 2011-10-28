@@ -274,6 +274,11 @@ ul li.licenciado
   background:url(icone-bolinha-licenciado.png) no-repeat 3px 2px;
 }
 
+ul li.licencaprovisoria
+{
+  background:url(icone-bolinha-licencaprovisoria.png) no-repeat 3px 2px;
+}
+
 ul li.naolicenciado
 {
   background:url(icone-bolinha-naolicenciado.png) no-repeat 3px 2px;

@@ -182,4 +182,22 @@ function SeparaCampos($strFrase, $charSeparador = ",")
 		return NULL;
 }
 
+/**
+ * Converte valor do campo licenca (tipo enum) da tabela
+ * radios_comunitarias para uma string "user-friendly".
+ * 
+ * @param string $licenca
+ * @return string
+ */
+function imprimeLicenca($licenca) {
+	switch ($licenca) {
+		case 'definitiva':
+			return 'Definitiva';
+		case 'provisoria':
+			return 'Provisória';
+		case 'sem':
+			return 'Outorgada, sem licença';
+	}
+}
+
 ?>

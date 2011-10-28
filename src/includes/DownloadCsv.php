@@ -70,7 +70,7 @@ header("Content-Type: text/x-csv; charset=UTF-8;");
 header("Content-Disposition: attachment; filename=\"dados.csv\";");
 
 //$CsvBody = utf8_decode('"Razão social";"UF";"Município";"Endereço";"Bairro";"CEP";"Rádio licenciada?";"Canal";"Frequência";"Indicador";"Latitude";"Longitude";"Telefone";"Email";') . "\r\n";
-$CsvBody = utf8_decode('"Razão social";"UF";"Município";"Endereço";"Rádio licenciada?";"Canal";"Frequência";"Indicador";"Latitude";"Longitude"') . "\r\n";
+$CsvBody = utf8_decode('"Razão social";"UF";"Município";"Endereço";"Licença";"Canal";"Frequência";"Indicador";"Latitude";"Longitude"') . "\r\n";
 
 while ($telec = mysql_fetch_array($resBusca)) {
 	$CsvBody .= '"' . limpaString($telec['razao_social']) . '";';
@@ -80,7 +80,7 @@ while ($telec = mysql_fetch_array($resBusca)) {
 	$CsvBody .= '"' . (isset($telec['endereco']) ? limpaString($telec['endereco']) : '') . '";';
 	//$CsvBody .= '"' . (isset($telec['bairro']) ? $telec['bairro'] : '') . '";';
 	//$CsvBody .= '"' . (isset($telec['cep']) ? $telec['cep'] : '') . '";';
-	$CsvBody .= '"' . (isset($telec['licenciado']) ? 'Sim' : utf8_decode('Não')) . '";';
+	$CsvBody .= '"' . imprimeLicenca($telec['licenca']) . '";';
 	$CsvBody .= '"' . (isset($telec['canal']) ? $telec['canal'] : '') . '";';
 	$CsvBody .= '"' . (isset($telec['frequencia']) ? $telec['frequencia'] : '') . '";';
 	$CsvBody .= '"' . (isset($telec['indicador']) ? $telec['indicador'] : '') . '";';

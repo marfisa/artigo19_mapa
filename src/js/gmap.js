@@ -4,80 +4,80 @@ var map;
 var matPontos = new Array();
 var markCasa;
 var boolProcuraRealizada = false;
-var legenda_itens = new Array('lic', 'nlic');
 var legenda = new Array();
 
 var icoLicenciado = new GIcon();
+var icoLicencaProvisoria = new GIcon();
 var icoNaoLicenciado = new GIcon();
 
 icoLicenciado.image = "imagens/icone-marcador-licenciado.png";
+icoLicencaProvisoria.image = "imagens/icone-marcador-licencaprovisoria.png";
 icoNaoLicenciado.image = "imagens/icone-marcador-naolicenciado.png";
 
-icoLicenciado.shadow = icoNaoLicenciado.shadow  =  "imagens/icone-sombra.png";
-icoLicenciado.iconSize = icoNaoLicenciado.iconSize  =  new GSize(12, 20);
-icoLicenciado.shadowSize = icoNaoLicenciado.shadowSize  =  new GSize(22, 20);
-icoLicenciado.iconAnchor = icoNaoLicenciado.iconAnchor  =  new GPoint(6, 20);
-icoLicenciado.infoWindowAnchor = icoNaoLicenciado.infoWindowAnchor = new GPoint(5, 1);
+icoLicenciado.shadow = icoLicencaProvisoria.shadow = icoNaoLicenciado.shadow  =  "imagens/icone-sombra.png";
+icoLicenciado.iconSize = icoLicencaProvisoria.iconSize = icoNaoLicenciado.iconSize  =  new GSize(12, 20);
+icoLicenciado.shadowSize = icoLicencaProvisoria.shadowSize = icoNaoLicenciado.shadowSize  =  new GSize(22, 20);
+icoLicenciado.iconAnchor = icoLicencaProvisoria.iconAnchor = icoNaoLicenciado.iconAnchor  =  new GPoint(6, 20);
+icoLicenciado.infoWindowAnchor = icoLicencaProvisoria.infoWindowAnchor = icoNaoLicenciado.infoWindowAnchor = new GPoint(5, 1);
 
 
 /******************************************/
 
-function inciaGoogleMap()
-{
-	if (GBrowserIsCompatible())
-	{
-    map =  new GMap2(document.getElementById("map"));
-  	map.setCenter(new GLatLng(-14.782928,-52.382812),4);
-    map.addControl(new GLargeMapControl());
-    map.addControl(new GMapTypeControl());
-    map.addControl(new GOverviewMapControl());
-    map.addControl(new GScaleControl());
-  	map.checkResize();
-  	
-  	criaShapesEstados(2);
-	}
-	else
+function inciaGoogleMap() {
+	if (GBrowserIsCompatible()) {
+		map = new GMap2(document.getElementById("map"));
+	  	map.setCenter(new GLatLng(-14.782928,-52.382812),4);
+		map.addControl(new GLargeMapControl());
+		map.addControl(new GMapTypeControl());
+		map.addControl(new GOverviewMapControl());
+		map.addControl(new GScaleControl());
+	  	map.checkResize();
+	  	
+	  	criaShapesEstados(2);
+	} else {
 		alert('Infelizmente seu navegador não é compatível com o GoogleMaps.');
+	}
 }
 
 /******************************************/
 
-function criaPontoCasa()
-{
-  if (lat != null && lon != null)
-  {
-    var icoCasa = new GIcon();
-    icoCasa.image = "imagens/icone-local.png";
-    icoCasa.iconSize = new GSize(20, 20);
-    icoCasa.iconAnchor = new GPoint(10, 10);
-    icoCasa.infoWindowAnchor = new GPoint(8, 8);
+function criaPontoCasa() {
+	if (lat != null && lon != null)	{
+		var icoCasa = new GIcon();
+		icoCasa.image = "imagens/icone-local.png";
+		icoCasa.iconSize = new GSize(20, 20);
+		icoCasa.iconAnchor = new GPoint(10, 10);
+		icoCasa.infoWindowAnchor = new GPoint(8, 8);
 
-  	var MarkerOptions = new Object();
+		var MarkerOptions = new Object();
 
-  	MarkerOptions.icon = icoCasa;
+		MarkerOptions.icon = icoCasa;
 
-  	markCasa = new GMarker(new GLatLng(lat,lon), MarkerOptions);
-    map.addOverlay(markCasa);
-  }
+		markCasa = new GMarker(new GLatLng(lat,lon), MarkerOptions);
+		map.addOverlay(markCasa);
+	}
 }
 
 /******************************************/
 
-function criaPonto(ponto)
-{
+function criaPonto(ponto) {
 	var MarkerOptions = new Object();
 	MarkerOptions.title = ponto.nom;
 
-  switch(ponto.ico){
-    case 'lic':
-        MarkerOptions.icon = icoLicenciado;
-	    legenda['lic'] = legenda['lic'] + 1;
-    break;
-    case 'nlic':
-        MarkerOptions.icon = icoNaoLicenciado;
-    	legenda['nlic'] = legenda['nlic'] + 1;
-    break;
-  }
+	switch (ponto.ico) {
+		case 'lic':
+			MarkerOptions.icon = icoLicenciado;
+			legenda['lic'] = legenda['lic'] + 1;
+			break;
+		case 'plic':
+			MarkerOptions.icon = icoLicencaProvisoria;
+			legenda['plic'] = legenda['plic'] + 1;
+			break;
+		case 'nlic':
+			MarkerOptions.icon = icoNaoLicenciado;
+			legenda['nlic'] = legenda['nlic'] + 1;
+			break;
+	}
 
 	var marker = new GMarker(ponto.coo, MarkerOptions);
 	bounds.extend(ponto.coo);
@@ -86,95 +86,95 @@ function criaPonto(ponto)
 	GEvent.addListener(marker, "mouseover", function(e) {});
 	GEvent.addListener(marker, "mouseout", function(e) {});
 
-  matPontos[ponto.id] = marker;
-  matRadios[ponto.id] = ponto;
-  map.addOverlay(marker);
+	matPontos[ponto.id] = marker;
+	matRadios[ponto.id] = ponto;
+	map.addOverlay(marker);
 }
 
 /******************************************/
 
-function ajustaMapaPontos()
-{
+function ajustaMapaPontos() {
 	map.setZoom(map.getBoundsZoomLevel(bounds));
 	map.setCenter(bounds.getCenter());
 }
 
 /******************************************/
 
-function limpaMapa()
-{
-  boolProcuraRealizada = true;
-  map.clearOverlays();
-  criaPontoCasa();
-  bounds = new GLatLngBounds();
-  removeShapesEstados();
+function limpaMapa() {
+	boolProcuraRealizada = true;
+	map.clearOverlays();
+	criaPontoCasa();
+	bounds = new GLatLngBounds();
+	removeShapesEstados();
 }
 
 /******************************************/
 
-function abreBalao(id)
-{
-    map.panTo(matPontos[id].getLatLng());
-    //matPontos[id].openInfoWindowHtml(matRadios[id].nom);
+function abreBalao(id) {
+	map.panTo(matPontos[id].getLatLng());
+	matPontos[id].openInfoWindowHtml(matRadios[id].nom);
     
-    matPontos[id].openInfoWindowHtml('<div class="loading">Carregando detalhes...</div>');
-		getDetalhesPonto(id);
+	matPontos[id].openInfoWindowHtml('<div class="loading">Carregando detalhes...</div>');
+	getDetalhesPonto(id);
 }
 
 /******************************************/
 
-function getDetalhesPonto(id)
-{
-  var url = 'includes/AjaxDetalhes.php?id=' + id
-  new Ajax(url,
-    {
-		  method: 'get',
-		  onComplete: exibeDetalhesPonto
-    }
-  ).request();
+function getDetalhesPonto(id) {
+	var url = 'includes/AjaxDetalhes.php?id=' + id
+	new Ajax(url,
+		{
+			method: 'get',
+			onComplete: exibeDetalhesPonto
+		}
+	).request();
 }
 
 /******************************************/
 
 function exibeDetalhesPonto(jsonResult)
 {
-  jsonData = eval("(" + jsonResult + ")");
+	jsonData = eval("(" + jsonResult + ")");
 
-  /* Monta a aba principal com as informações sobre o ponto */
+	/* Monta a aba principal com as informações sobre o ponto */
 	var tabPontoHtml = '<div class="infowindow">';
 
-  var licenciada = '';
-  if (jsonData.marker.lic == "1")
-    licenciada = 'Rádio licenciada';
-  else
-    licenciada = 'Rádio não licenciada';
+	var licenca = '';
+	if (jsonData.marker.lic == 'definitiva') {
+		licenca = 'Rádio com licença definitiva';
+	} else if (jsonData.marker.lic == 'provisoria') {
+		licenca = 'Rádio com licença provisoria';
+	} else {
+		licenca = 'Rádio outorgada, sem licença';
+	}
 
-  tabPontoHtml += '<p class="cartola">' + licenciada + '</p>';
-  tabPontoHtml += '<h2>' + jsonData.marker.nom + '</h2>';
+	tabPontoHtml += '<p class="cartola">' + licenca + '</p>';
+	tabPontoHtml += '<h2>' + jsonData.marker.nom + '</h2>';
 
-  tabPontoHtml += '<table width="60%">';
-  tabPontoHtml += '<tr>';
-  tabPontoHtml += '<th>Canal</th><th>Freqüência</th><th>Indicador</th>';
-  tabPontoHtml += '</tr>';
-  tabPontoHtml += '<tr class="c2">';
-  tabPontoHtml += '<td style="text-align:center;">' + jsonData.marker.can + '</td>';
-  tabPontoHtml += '<td style="text-align:center;">' + jsonData.marker.fre + '</td>';
-  tabPontoHtml += '<td style="text-align:center;">' + jsonData.marker.ind + '</td>';
-  tabPontoHtml += '</tr>';
-  tabPontoHtml += '</table>';
+	tabPontoHtml += '<table width="60%">';
+	tabPontoHtml += '<tr>';
+	tabPontoHtml += '<th>Canal</th><th>Freqüência</th><th>Indicador</th>';
+	tabPontoHtml += '</tr>';
+	tabPontoHtml += '<tr class="c2">';
+	tabPontoHtml += '<td style="text-align:center;">' + jsonData.marker.can + '</td>';
+	tabPontoHtml += '<td style="text-align:center;">' + jsonData.marker.fre + '</td>';
+	tabPontoHtml += '<td style="text-align:center;">' + jsonData.marker.ind + '</td>';
+	tabPontoHtml += '</tr>';
+	tabPontoHtml += '</table>';
 
-  tabPontoHtml += '<p class="endereco">';
-	if (jsonData.marker.end != "") tabPontoHtml += jsonData.marker.end + '<br>';
+	tabPontoHtml += '<p class="endereco">';
+	if (jsonData.marker.end != "") {
+		tabPontoHtml += jsonData.marker.end + '<br>';
+	}
 	tabPontoHtml += jsonData.marker.mun + ' - ' + jsonData.marker.est + '</p>';
 
-  tabPontoHtml += '</div>';
+	tabPontoHtml += '</div>';
 
 	/* Monta a aba do dataIpso */
 
-	if (typeof(jsonData.municipio) == 'object')
-	{
+	if (typeof(jsonData.municipio) == 'object')	{
 		var tabDataIPSOHtml = '<div class="infowindow">';
-		tabDataIPSOHtml += '<p class="cartola">' + licenciada + '</p><h2>' + jsonData.marker.nom + '</h2>';
+		tabDataIPSOHtml += '<p class="cartola">' + licenca + '</p><h2>' + jsonData.marker.nom + '</h2>';
 
 		tabDataIPSOHtml += '<div class="dataipso">';
 
@@ -199,40 +199,45 @@ function exibeDetalhesPonto(jsonResult)
 		tabDataIPSOHtml += '</div>';
 	}
 
-	if (typeof(jsonData.municipio) == 'object')
+	if (typeof(jsonData.municipio) == 'object') {
 		var infoTabs =
 		[
 				new GInfoWindowTab("Rádio", tabPontoHtml),
 				new GInfoWindowTab("DataIPSO", tabDataIPSOHtml)
 		];
-	else
+	} else {
 		var infoTabs =
 		[
 				new GInfoWindowTab("Rádio", tabPontoHtml),
 		];
-
+	}
+	
 	matPontos[jsonData.marker.id].openInfoWindowTabsHtml(infoTabs);
 }
 
 /******************************************/
 
-function criaLegenda()
-{
-  var html = '';
-  html += '<div class="titulo">Legenda dos marcadores</div><ul>';
-  
-  if(legenda['lic'] > 0)
-  	html += '<li class="licenciado bg">Rádios licenciadas ('+legenda['lic']+')</li>';
-  
-  if(legenda['nlic'] > 0)
-  	html += '<li class="naolicenciado bg">Rádios não licenciadas ('+legenda['nlic']+')</li>';
+function criaLegenda() {
+	var html = '';
+	html += '<div class="titulo">Legenda dos marcadores</div><ul>';
+	
+	if (legenda['lic'] > 0) {
+		html += '<li class="licenciado bg">Rádios com licença definitiva ('+legenda['lic']+')</li>';
+	}
+	
+	if (legenda['plic'] > 0) {
+		html += '<li class="licencaprovisoria bg">Rádios com licença provisória ('+legenda['plic']+')</li>';
+	}
+	
+	if (legenda['nlic'] > 0) {
+		html += '<li class="naolicenciado bg">Rádios outorgadas, sem licença ('+legenda['nlic']+')</li>';
+	}
  
 	var idLegenda = new Element('div', {'id':'legendaMapa'})
-        .setHTML(html)
-        .injectAfter($('map'));
+		.setHTML(html)
+		.injectAfter($('map'));
 
-    atualizaPosicaoLegenda();
- 
+	atualizaPosicaoLegenda();
 }
 
 /******************************************/

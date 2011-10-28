@@ -86,13 +86,19 @@ $jsonOutput = "{\r\n";
 $jsonOutput .= "\"markers\":\r\n";
 $jsonOutput .= "\t[\r\n";
 
-while($telec = mysql_fetch_array($resBusca)) {
-	if ($telec['licenciado']) {
-		$icone = "lic";
-	} else {
-		$icone = "nlic";
+while ($telec = mysql_fetch_array($resBusca)) {
+	switch ($telec['licenca']) {
+		case 'definitiva':
+			$icone = "lic";
+			break;
+		case 'provisoria':
+			$icone = 'plic';
+			break;
+		case 'sem':
+			$icone = "nlic";
+			break;
 	}
-  
+	
   	$jsonOutput .= "\t\t{\r\n";
   	$jsonOutput .= "\t\t\t\"id\": {$telec['ID']},\r\n";
   	$jsonOutput .= "\t\t\t\"nom\": \"" . limpaString($telec['razao_social']) . "\",\r\n";

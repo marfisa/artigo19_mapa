@@ -105,7 +105,7 @@ while ($telec = mysql_fetch_array($resBusca)) {
 	
 	$CsvBody .= "</td></tr>\r";
 	
-	$CsvBody .= '<tr><td class="nome">R&aacute;dio licenciada:</td><td class="valor">' . (isset($telec['licenciado']) ? 'Sim' : 'N&atilde;o') . "</td></tr>\r";
+	$CsvBody .= '<tr><td class="nome">Licen&ccedil;a:</td><td class="valor">' . imprimeLicenca($telec['licenca']) . "</td></tr>\r";
 	
 	if (isset($telec['canal'])) {
 		$CsvBody .= '<tr><td class="nome">Canal:</td><td class="valor">' . limpaString($telec['canal']) . "</td></tr>\r";

@@ -88,8 +88,9 @@
 				    <table cellspace="1" border="0" class="info">
 				        <tr>
 				            <th>Estado</td>
-				            <th>Licenciadas</td>
-				            <th>Não licenciadas</td>
+				            <th>Licença definitiva</td>
+				            <th>Licença provisória</td>
+				            <th>Outorgada, sem licença</td>
 				            <th>Total</td>
 				        </tr>
 				
@@ -99,8 +100,9 @@
     $sqlPontosPorEstado =
         "SELECT
           u.nome,
-          COUNT(licenciado) as lic,
-          (COUNT(*)-COUNT(licenciado)) as nlic,
+          SUM(licenca = 'definitiva') as lic,
+          SUM(licenca = 'provisoria') as plic,
+          SUM(licenca = 'sem') as nlic,
           COUNT(*) as total
         FROM
           `radios_comunitarias` r
@@ -124,6 +126,7 @@
         echo("				        <tr{$corFundo}>\r\n");
         echo("				            <td>" . utf8_encode($ponto['nome']) . "</td>\r\n");
         echo("				            <td>" . utf8_encode($ponto['lic']) . "</td>\r\n");
+        echo("				            <td>" . utf8_encode($ponto['plic']) . "</td>\r\n");
         echo("				            <td>" . utf8_encode($ponto['nlic']) . "</td>\r\n");
         echo("				            <td>" . utf8_encode($ponto['total']) . "</td>\r\n");
         echo("				        </tr>\r\n");
@@ -141,8 +144,9 @@
 				    <table cellspace="1" border="0" class="info">
 				        <tr>
 				            <th>Região</td>
-				            <th>Licenciadas</td>
-				            <th>Não licenciadas</td>
+				            <th>Licença definitiva</td>
+				            <th>Licença provisória</td>
+				            <th>Outorgada, sem licença</td>
 				            <th>Total</td>
 				        </tr>
 				<?
@@ -151,8 +155,9 @@
     $sqlPontosPorRegiao =
         "SELECT
           re.nome,
-          COUNT(licenciado) as lic,
-          (COUNT(*)-COUNT(licenciado)) as nlic,
+          SUM(licenca = 'definitiva') as lic,
+          SUM(licenca = 'provisoria') as plic,
+          SUM(licenca = 'sem') as nlic,
           COUNT(*) as total
         FROM
           `radios_comunitarias` r
@@ -176,6 +181,7 @@
         echo("				        <tr{$corFundo}>\r\n");
         echo("				            <td>{$ponto['nome']}</td>\r\n");
         echo("				            <td>{$ponto['lic']}</td>\r\n");
+        echo("				            <td>{$ponto['plic']}</td>\r\n");
         echo("				            <td>{$ponto['nlic']}</td>\r\n");
         echo("				            <td>{$ponto['total']}</td>\r\n");
         echo("				        </tr>\r\n");
