@@ -66,7 +66,6 @@ function criaPoligonoEstado(estado, relacao, opacidade)
       htmlBalao  = '<div class="balao_uf">';
       htmlBalao += '<h2>'+estadosEstatisticas[estado].nom+'</h2>';
       htmlBalao += '<p><strong>População:</strong> ' + estadosEstatisticas[estado].pop + '</p>';
-      htmlBalao += '<p><strong>Pontos de cultura: </strong>' + estadosEstatisticas[estado].pon + '</p>';
       htmlBalao += '<p><strong>Municípios: </strong>' + estadosEstatisticas[estado].mun + '</p>';
       htmlBalao += '<p><strong style="color:' + relacoes[relacao].cor + '">' + relacoes[relacao].nome + ': </strong>' + Math.round(estadosEstatisticas[estado].rel*Math.pow(10,4))/Math.pow(10,4) + '</p>';
       htmlBalao += '</div>';
