@@ -195,6 +195,7 @@ function exibeDetalhesPonto(jsonResult)
 		tabDataIPSOHtml += '<tr><td>Esperan&ccedil;a de vida</td><td class="valor">' + jsonData.municipio.esperanca_de_vida + '</td><td class="valor">' + jsonData.estado.esperanca_de_vida + '</td><td class="valor">' + jsonData.pais.esperanca_de_vida + '</td></tr>';
 		tabDataIPSOHtml += '</table>';
 		tabDataIPSOHtml += '</div>';
+		tabDataIPSOHtml += '<p>Fonte: Censo do IBGE de 2000</p>';
 		tabDataIPSOHtml += '</div>';
 		tabDataIPSOHtml += '</div>';
 	}
