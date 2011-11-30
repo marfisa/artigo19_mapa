@@ -206,7 +206,6 @@
   </div>
   <div id="cabecalho">
     <h1>Mapa das r&aacute;dios comunit&aacute;rias</h1>
-    <div id="logo_ipso"></div>
     <div class="links"><a href="javascript:void(0)" id="a_maisinfo">Mais informa&ccedil;&otilde;es</a></div>
   </div>
   <table id="container" cellspacing="0" cellpadding="0">
@@ -266,7 +265,7 @@
       </td>
     </tr>
   </table>
-  <div id="rodape"><a href="http://www.ipso.org.br" target="_blank">IPSO - Instituto de Pesquisas e Projetos Sociais e Tecnol&oacute;gicos</a>&nbsp; &#0149; &nbsp;<a href="http://www.article19.org/work/regions/latin-america/portuguese.html" target="_blank">Article 19 - Campanha global pela liberdade de expressão</a></div>
+  <div id="rodape"><a href="http://www.article19.org/work/regions/latin-america/portuguese.html" target="_blank">Artigo 19 - Defendendo a liberdade de expressão e informação</a></div>
 
 </body>
 </html>

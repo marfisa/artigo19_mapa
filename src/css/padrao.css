@@ -48,15 +48,6 @@ div#cabecalho h1
   font-family: Arial, Tahoma, Sans Serif
 }
 
-div#logo_ipso
-{
-  background:url(cabecalho-logo-ipso.gif) no-repeat;
-  width:100px;
-  height:35px;
-  float:right;
-  margin:13px 20px 0 0;
-}
-
 div#cabecalho div.links
 {
   float:right;
