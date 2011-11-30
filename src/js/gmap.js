@@ -203,7 +203,7 @@ function exibeDetalhesPonto(jsonResult)
 		var infoTabs =
 		[
 				new GInfoWindowTab("Rádio", tabPontoHtml),
-				new GInfoWindowTab("DataIPSO", tabDataIPSOHtml)
+				new GInfoWindowTab("Índices", tabDataIPSOHtml)
 		];
 	} else {
 		var infoTabs =
