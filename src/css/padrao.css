@@ -227,7 +227,8 @@ div#end_definido a
 
 a#abre_endereco,
 a#abre_projetos,
-a#abre_pchaves
+a#abre_pchaves,
+a#abre_tipo
 {
   background:url("blateral-busca-mais.gif") 0 1px no-repeat;
   padding-left:20px;

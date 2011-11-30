@@ -42,8 +42,13 @@ if (isset($_GET['pchave'])) {
 	$sqlBusca = substr($sqlBusca, 0, -5);
 	$sqlBusca .= ") AND ";
 }
+
+if ($_GET['tipo']) {
+	$sqlBusca .= " t.licenca = '{$_GET['tipo']}' AND ";
+}
+
 $sqlBusca .="`VISIVEL` = 1 ORDER BY ";
-  
+
 if (isset($_GET['lat']) && isset($_GET['lon'])) {
 	$sqlBusca .= "DISTANCIA, ";
 }

@@ -219,25 +219,33 @@
 			<div id="div_procura" class="container">
 				<div id="container_uf">
 					<select name="select_uf" id="select_uf">
-					<option value="0">Todo o Brasil</option>
-	<?
-		montaSelect($sqlGetEstados, "nome", "uf", "");
-	?>
+						<option value="0">Todo o Brasil</option>
+						<? montaSelect($sqlGetEstados, "nome", "uf", ""); ?>
 					</select>
 				</div>
+				
+				<select name="select_tipo" id="select_tipo">
+					<option value="">Todos os tipos de licença</option>
+					<option value="definitiva">Licença definitiva</option>
+					<option value="provisoria">Licença provisória</option>
+					<option value="sem">Outorgada, sem licença</option>
+				</select>
+				
+				<br /><br />
+								
 				<a id="abre_endereco" href="javascript:void(0)">Pr&oacute;ximos a um endere&ccedil;o</a>
 				<fieldset id="fset_endereco">
 					<legend>Pr&oacute;ximos a um endere&ccedil;o</legend>
 					<input id="txt_endereco" name="endereco" type="text" value="endere&ccedil;o" />
 					<div id="div_numradios">
-					Listar as
-					<select name="num_proximos" id="select_numradios">
-						<option value="5">5</option>
-						<option value="10" selected="selected">10</option>
-						<option value="50">50</option>
-						<option value="100">100</option>
-					</select>
-					r&aacute;dios mais pr&oacute;ximas
+						Listar as
+						<select name="num_proximos" id="select_numradios">
+							<option value="5">5</option>
+							<option value="10" selected="selected">10</option>
+							<option value="50">50</option>
+							<option value="100">100</option>
+						</select>
+						r&aacute;dios mais pr&oacute;ximas
 					</div>
 				</fieldset>
 	
@@ -246,9 +254,11 @@
 					<legend>Palavras chave</legend>
 					<input id="txt_palavraschave" name="palavras_chave" type="text" value="palavras chave" />
 				</fieldset>
+
 				<div id="container_busca">
 					<input id="btn_busca" name="pesquisar" type="button" value="pesquisar" />
 				</div>
+				
 				<p id="p_validacao"></p>
 			</div>
 			<a href="javascript:void(0)" title="Resultados" id="a_resultados" class="titulo">Resultados</a>

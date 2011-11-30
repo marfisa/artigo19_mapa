@@ -354,7 +354,10 @@ function buscaTelecentros() {
 	if ($('txt_palavraschave').getValue() != '' && $('txt_palavraschave').getValue() != 'palavras chave') {
 		url += "&pchave=" + escape($('txt_palavraschave').getValue());
 	}
-		
+	
+	if ($('select_tipo').getValue() != '') {
+		url += "&tipo=" + escape($('select_tipo').getValue());
+	}
 	
 	processandoToggle(function(e)
 		{
