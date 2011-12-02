@@ -33,16 +33,16 @@ select, input
 div#cabecalho
 {
 	height:100%;
-	height:64px;
+	height:92px;
 }
 
 div#cabecalho h1
 {
 	background:url(cabecalho-logo.gif) no-repeat 0 4px;
 	font-size:20pt;
-	height:38px;
+	height:92px;
 	margin:0 0 0 20px;
-	padding:16px 0 2px 330px;
+	padding:61px 0 2px 330px;
 	float:left;
   font-family: Arial, Tahoma, Sans Serif
 }
@@ -50,7 +50,7 @@ div#cabecalho h1
 div#cabecalho div.links
 {
   float:right;
-  margin:21px 30px 0 0;
+  margin:68px 30px 0 0;
 }
 
 div#cabecalho div.links a
