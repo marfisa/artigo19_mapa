@@ -1,42 +1,32 @@
 <?
-	require_once('utils.inc.php');
-	header("Content-Type: text/plain; charset=iso-8859-1");
+require_once('utils.inc.php');
+header("Content-Type: text/plain; charset=iso-8859-1");
 	
-  $resPopEstados = query($sqlGetPopulacaoEstados);
-  $resPonEstados = query($sqlGetPontosEstados);
-  $resMunEstados = query($sqlGetMunicipiosEstados);
+$resPopEstados = query($sqlGetPopulacaoEstados);
+$resPonEstados = query($sqlGetPontosEstados);
+$resMunEstados = query($sqlGetMunicipiosEstados);
   
-    while($myPopEstado = mysql_fetch_array($resPopEstados))
-    {
-        $myPopEstados[] = $myPopEstado;
-        $myPonEstados[] = mysql_fetch_array($resPonEstados);
-        $myMunEstados[] = mysql_fetch_array($resMunEstados);
-    }
-    
-/*
-  for ($i=0; $i<count($myPopEstados); $i++)
-    $myRelEstados[] = ($myPonEstados[$i]['contagem']/$myPopEstados[$i]['contagem']);
-    
-  $maxRel = max($myRelEstados);
-*/
-	$jsonOutput  = "{\r\n";
+while($myPopEstado = mysql_fetch_array($resPopEstados)) {
+	$myPopEstados[] = $myPopEstado;
+	$myPonEstados[] = mysql_fetch_array($resPonEstados);
+	$myMunEstados[] = mysql_fetch_array($resMunEstados);
+}
 
-  for ($i=0; $i<count($myPopEstados); $i++)
-  {
-    $jsonOutput .= "\t'{$myPopEstados[$i]['uf']}':\r\n";
-    $jsonOutput .= "\t{\r\n";
-    $jsonOutput .= "\t\t'nom': '{$myPonEstados[$i]['nome']}',\r\n";
-    $jsonOutput .= "\t\t'pop': {$myPopEstados[$i]['contagem']},\r\n";
-    $jsonOutput .= "\t\t'pon': {$myPonEstados[$i]['contagem']},\r\n";
-    $jsonOutput .= "\t\t'mun': {$myMunEstados[$i]['contagem']}\r\n";
-    $jsonOutput .= "\t},\r\n";
-  }
+$jsonOutput  = "{\r\n";
 
-  $jsonOutput = substr($jsonOutput, 0, -3);
-  $jsonOutput .= "\r\n";
+for ($i=0; $i<count($myPopEstados); $i++) {
+	$jsonOutput .= "\t'{$myPopEstados[$i]['uf']}':\r\n";
+	$jsonOutput .= "\t{\r\n";
+	$jsonOutput .= "\t\t'nom': '{$myPonEstados[$i]['nome']}',\r\n";
+	$jsonOutput .= "\t\t'pop': {$myPopEstados[$i]['contagem']},\r\n";
+	$jsonOutput .= "\t\t'pon': {$myPonEstados[$i]['contagem']},\r\n";
+	$jsonOutput .= "\t\t'mun': {$myMunEstados[$i]['contagem']}\r\n";
+	$jsonOutput .= "\t},\r\n";
+}
 
-	$jsonOutput .= "}";
+$jsonOutput = substr($jsonOutput, 0, -3);
+$jsonOutput .= "\r\n";
 
-  echo($jsonOutput);
-	
-?>
+$jsonOutput .= "}";
+
+echo($jsonOutput);
