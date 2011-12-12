@@ -43,7 +43,7 @@ if (isset($_GET['pchave'])) {
 	$sqlBusca .= ") AND ";
 }
 
-if ($_GET['tipo']) {
+if (isset($_GET['tipo']) && $_GET['tipo']) {
 	$sqlBusca .= " t.licenca = '{$_GET['tipo']}' AND ";
 }
 
