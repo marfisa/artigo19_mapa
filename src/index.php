@@ -207,6 +207,7 @@
 	<div id="cabecalho">
 		<h1>Mapa das r&aacute;dios comunit&aacute;rias</h1>
 		<div class="links"><a href="javascript:void(0)" id="a_maisinfo">Mais informa&ccedil;&otilde;es</a></div>
+		<div class="links"><a href="http://artigo19.org/jurisprudencia/" target="_blank">Jurisprudência</a></div>
 	</div>
 	<table id="container" cellspacing="0" cellpadding="0">
 		<tr>
