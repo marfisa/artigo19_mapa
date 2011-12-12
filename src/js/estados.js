@@ -60,6 +60,12 @@ var rel_global = 0;
 
 function criaPoligonoEstado(estado, relacao, opacidade)
 {
+	// gambiarra para resolver problema no IE quando o valor do sexto
+	// parâmetro passado para o GPolygon é maior que 1
+	if (opacidade > 2.5) {
+		opacidade = 2.5;
+	}
+	
 	var polyEstado = new GPolygon(estadosPontos[estado], "#000000", 4, 0.15, relacoes[relacao].cor, opacidade*0.40);
 	GEvent.addListener(polyEstado, "click", function(latlng)
 		{
