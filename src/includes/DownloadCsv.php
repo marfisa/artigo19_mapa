@@ -69,8 +69,7 @@ $resBusca = query($sqlBusca);
 header("Content-Type: text/x-csv; charset=UTF-8;");
 header("Content-Disposition: attachment; filename=\"dados.csv\";");
 
-//$CsvBody = utf8_decode('"Razão social";"UF";"Município";"Endereço";"Bairro";"CEP";"Rádio licenciada?";"Canal";"Frequência";"Indicador";"Latitude";"Longitude";"Telefone";"Email";') . "\r\n";
-$CsvBody = utf8_decode('"Razão social";"UF";"Município";"Endereço";"Licença";"Canal";"Frequência";"Indicador";"Latitude";"Longitude"') . "\r\n";
+$CsvBody = '"Razão social";"UF";"Município";"Endereço";"Licença";"Canal";"Frequência";"Indicador";"Latitude";"Longitude"' . "\r\n";
 
 while ($telec = mysql_fetch_array($resBusca)) {
 	$CsvBody .= '"' . limpaString($telec['razao_social']) . '";';
@@ -78,16 +77,12 @@ while ($telec = mysql_fetch_array($resBusca)) {
 	$CsvBody .= '"' . (isset($telec['uf']) ? limpaString($telec['uf']) : '') . '";';
 	$CsvBody .= '"' . (isset($telec['municipio']) ? limpaString($telec['municipio']) : '') . '";';
 	$CsvBody .= '"' . (isset($telec['endereco']) ? limpaString($telec['endereco']) : '') . '";';
-	//$CsvBody .= '"' . (isset($telec['bairro']) ? $telec['bairro'] : '') . '";';
-	//$CsvBody .= '"' . (isset($telec['cep']) ? $telec['cep'] : '') . '";';
 	$CsvBody .= '"' . imprimeLicenca($telec['licenca']) . '";';
 	$CsvBody .= '"' . (isset($telec['canal']) ? $telec['canal'] : '') . '";';
 	$CsvBody .= '"' . (isset($telec['frequencia']) ? $telec['frequencia'] : '') . '";';
 	$CsvBody .= '"' . (isset($telec['indicador']) ? $telec['indicador'] : '') . '";';
 	$CsvBody .= '"' . (isset($telec['latitude']) ? $telec['latitude'] : '') . '";';
 	$CsvBody .= '"' . (isset($telec['longitude']) ? $telec['longitude'] : '') . '";';
-	//$CsvBody .= '"' . (isset($telec['telefone']) ? $telec['telefone'] : '') . '";';
-	//$CsvBody .= '"' . (isset($telec['email']) ? $telec['email'] : '') . '";';
 	$CsvBody .= "\r\n";
 }
 		
