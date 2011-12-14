@@ -177,12 +177,12 @@ function AjustaTamanho() {
 	}
 
 	/* Redimensiona elementos para caber na tela */
-	$('map').setStyle('height',window.getHeight()-99);
+	$('map').setStyle('height',window.getHeight()-115);
 	$('map').setStyle('width',window.getWidth()-numWidthMap);
 
 	var gMapCoords = $('map').getCoordinates();
 	$('td_map').setStyle('width',gMapCoords.width+6);
-	$('barra_lateral').setStyle('height',window.getHeight()-99);
+	$('barra_lateral').setStyle('height',window.getHeight()-115);
 	$('rodape').setStyle('width',window.getWidth()-16);
 	
 	if (mapLoaded) {
@@ -195,11 +195,11 @@ function AjustaTamanho() {
 	
 	/* Redimensiona as caixas da barra lateral */
 	if (painelMaximizado == 'procura') {
-		$('div_procura').setStyle('height',Math.round((window.getHeight()-242)));
+		$('div_procura').setStyle('height',Math.round((window.getHeight()-258)));
 		$('div_resultados').setStyle('height',0);
 	} else {
 		$('div_procura').setStyle('height',0);
-		$('div_resultados').setStyle('height',Math.round((window.getHeight()-242)));
+		$('div_resultados').setStyle('height',Math.round((window.getHeight()-258)));
 	}
 	$('div_opcoes').setStyle('height',64);
 	
