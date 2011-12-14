@@ -24,65 +24,61 @@
 	<div id="container_info">
 		<a href="javascript:void(0)" id="box_fechar">fechar</a>
 		<div id="box_tabinfo">
+			<h4 title="Histórico">Histórico</h4>
+			<div>
+				<p>O Mapa das Rádios Comunitárias nasceu em 2008, de uma parceria entre o Instituto de Pesquisa e Projetos Sociais e Tecnológicos – IPSO e
+				a ARTIGO 19. Foi atualizado e retomado somente pela ARTIGO 19 em 2011 como o primeiro passo para a construção do Observatório de Comunicação Comunitária.</p>
+				<p><B>Ficha técnica</B><br />
+				Realização: ARTIGO 19<br />
+				Concepção: Instituto de Pesquisa e Projetos Sociais e Tecnológicos – IPSO e ARTIGO 19<br />
+				</p>
+				
+				<p>
+					<i>2008</i><br />
+					Equipe do IPSO envolvida:<br />
+					Carlos Seabra (coordenação geral)<br />
+					Mariane Ottati (gerenciamento executivo)<br />
+					Laura Tresca (coordenação de projeto)<br />
+					Cauê Thenório (programação)<br />
+					Daniel Medeiros (programação)<br />
+					Rodrigo Sampaio Primo (programação)<br />
+				</p>
+				<p>
+					Equipe da ARTIGO 19 envolvida:<br />
+					Paula Martins (coordenação geral)<br />
+					Jamila Venturini (coordenação e produção de conteúdo)<br />
+					Mila Molina (apoio)
+				</p>
+				<p>
+					<i>2011</i><br />
+					Paula Martins (coordenação geral)<br />
+					Laura Tresca  (coordenação de conteúdo)<br />
+					Carlos Seabra (consultoria)<br />
+					José Eduardo Bernardes e Jamila Venturini  (produção de conteúdo)<br />
+					Rodrigo Sampaio Primo (desenvolvimento)
+				</p>
+				<p>
+					<b>Fontes de informações:</b><br />
+					Sistema	de Informação dos Serviços de Comunicação de Massa, da Agência Nacional de Telecomunicações – Anatel e Ministério das Comunicações.
+				</p>		
+				<p>Para	mais informações ou colaboração escreva	para&nbsp;<A HREF="mailto:comunicacao@artigo19.org">comunicacao@artigo19.org</A></p>
+			</div>
+			
 			<h4 title="Metodologia">Metodologia</h4>
 			<div>
 				<h3>Metedologia usada no mapeamento</h3>
-				<p>O Mapa das rádios comunitárias apresenta todos os serviços de radiodifusão comunitária, licenciados e não licenciados, autorizados pelo Ministério das Comunicações. De acordo com o Decreto nº 2.615 de 3 de junho de 1998, artigo 8º, "licença para funcionamento de estação é o documento que habilita a estação a funcionar em caráter definitivo, e que explicita a condição de não possuir a emissora direito à proteção contra interferências causadas por estações de telecomunicações e de radiodifusão regularmente instaladas".</p>
-				<p>Os dados foram coletados no Sistema de Informação dos Serviços de Comunicação de Massa, da Agência Nacional de Telecomunicações - Anatel, disponível no site: <a href="http://sistemas.anatel.gov.br/siscom">http://sistemas.anatel.gov.br/siscom</a>. As estações foram buscadas no referido sistema estado por estado. O serviço pesquisado foi Radiodifusão Comunitária (231). </p>
-				<p>A consulta inicial foi feita na tabela de entidades outorgadas em janeiro de 2008. A atualização do mapa acontecerá periodicamente, a cada (dois meses?). Possíveis diferenças nas informações são conseqüência da autorização de novas entidades a operar o serviço de radiodifusão comunitária conforme a conclusão de avisos de habilitação em andamento. Para mais informações ou colaboração escreva para <a href="mailto:radioscomunitarias@utopia.org.br">radioscomunitarias@utopia.org.br</a>.</p>
-				<p>O Mapa das rádios comunitárias não faz referências se as estações autorizadas estão em funcionamento ou não. Tampouco há informações sobre rádios que estão em processo de habilitação ou não legalizadas.</p>
+				<p>O mapa das rádios comunitárias traz uma compilação das rádios comunitárias outorgadas pelo Ministério das Comunicações.</p>
+				<p>Os dados foram coletados no Sistema de Informação dos Serviços de Comunicação de Massa (Siscom), da Agência Nacional de Telecomunicações (Anatel) e estão disponíveis no site <a href="http://sistemas.anatel.gov.br/siscom" target="_blank">http://sistemas.anatel.gov.br/siscom</a>.  As estações foram buscadas no referido sistema, estado por estado. O serviço pesquisado foi Radiodifusão Comunitária (231).</p>
+				<p>O resultado da pesquisa foi comparado com as listas publicadas no site do Ministério Comunicações em PDF para constatação da atualidade dos dados.</p>
+				<p>O mapa traz informações sobre a localidade da estação, sua freqüência e a razão social da associação responsável pela emissora. As rádios estão divididas entre as que possuem licença definitiva, licença provisória e as que não possuem licença para funcionamento, apesar de já terem a outorga do Ministério.</p>
+				<p>Segundo o Decreto 2.615/98, a Licença para Funcionamento de Estação é o documento que habilita a estação a funcionar em caráter definitivo. A licença definitiva é emitida após decreto legislativo do Congresso Nacional. A outorga concedida pelo Ministério das Comunicações, portanto, só tem efeitos legais após deliberação do Congresso, conforme o parágrafo 3º do artigo 223 da Constituição Federal. A licença provisória, por sua vez, é emitida pelo Ministério das Comunicações se, em um prazo de 90 dias, o Congresso Nacional não apreciar o pedido encaminhado pelo Ministério. A licença provisória permite que a rádio funcione normalmente e vale até a publicação do decreto legislativo.</p>
+				<p>A consulta que resultou neste mapa foi feita em dezembro de 2011. Do total de 4394 rádios comunitárias existentes, não constam no mapa 506 rádios, porque não tinham seus endereços disponíveis na Anatel. Outras possíveis diferenças nas informações são conseqüência da autorização de novas entidades a operar o serviço de radiodifusão comunitária, conforme a conclusão de avisos de habilitação em andamento. Para mais informações ou colaboração escreva para <a href="mailto:comunicacao@artigo19.org">comunicacao@artigo19.org</a>.</p>
+				<p>Atenção: o mapa das rádios comunitárias não identifica se as estações estão efetivamente em funcionamento ou não, apenas indica - de acordo com as informações fornecidas pela Anatel - quais estão autorizadas a funcionar. Rádios em processo de habilitação ou não legalizadas não foram abordadas neste levantamento.</p>
 			</div>
-
-			<h4 title="Sites relacionados">Sites relacionados</h4>
-			<div>
-				<h3>Legislação</h3>
-				<p><a href="http://www6.senado.gov.br/legislacao/ListaTextoIntegral.action?id=126659">Lei nº 9.612, de 19 de fevereiro de 1998.</a><br>Institui o Serviço de Radiodifusão Comunitária e dá outras providências.</p>
-				<p><a href="http://www6.senado.gov.br/legislacao/ListaTextoIntegral.action?id=127437">Decreto nº 2.615, de 03 de junho de 1998.</a><br>Aprova o Regulamento do Serviço de Radiodifusão Comunitária.</p>
-				<p><a href="http://www.onu-brasil.org.br/documentos_direitoshumanos.php">Declaração Universal dos Direitos Humanos</a></p>
-				<h3>Sites relacionados</h3>
-				<p><a href="http://www.livreacesso.net">http://www.livreacesso.net</a></p>
-				<p><a href="http://www.ipso.org.br">http://www.ipso.org.br</a></p>
-				<p><a href="http://www.article19.org">http://www.article19.org</a></p>
-				<p><a href="http://www.onid.org.br">http://www.onid.org.br</a></p>
-				<p><a href="http://www.dataipso.utopia.org.br">http://www.dataipso.utopia.org.br</a></p>
-				<p><a href="http://www.mapasdarede.utopia.org.br">http://www.mapasdarede.utopia.org.br</a></p>
-				<p><a href="http://www.anatel.gov.br">http://www.anatel.gov.br</a></p>
-				<p><a href="http://www.mc.gov.br">http://www.mc.gov.br</a></p>
-			</div>
-
-			<h4 title="Créditos">Créditos</h4>
-			<div>
-				<h3>Créditos</h3>
-				<p>O Mapa das rádios comunitárias é uma iniciativa da Artigo 19 no Brasil em parceria com o Instituto de Pesquisas e Projetos Sociais e Tecnológicos - IPSO.</p>
-
-				<h5>Artigo 19</h5>
-				<p>Edição de conteúdo:</p>
-				<ul>
-					<li>Jamila Venturini (textos e XXX)</li>
-					<li>Paula Martins</li>
-					<li>Mila Molina</li>
-				</ul>
-
-				<h5>IPSO</h5>
-				<p>Desenvolvimento e programação:</p>
-				<ul>
-					<li>Carlos Seabra (coordenação)</li>
-					<li>Cauê Thenório (desenvolvimento e programação)</li>
-					<li>Mariane Ottati (colaboração)</li>
-					<li>Laura Tresca (textos e colaboração)</li>
-					<li>Diana Pellegrini (colaboração)</li>
-				</ul>
-
-			</div>
-
-			<h4 title="Fale conosco">Fale conosco</h4>
-			<div>
-				<h3>Fale conosco</h3>
-				<p>Você pode entrar em contato conosco através do e-mail: <a href="mailto:radioscomunitarias@utopia.org.br">radioscomunitarias@utopia.org.br</a>.</p>
-				<p>Qualquer dúvida, sugestão, reclamação ou elogio será muito bem recebido. Sua contribuição é importante para o andamento e aprimoramento do nosso trabalho.</p>
-			</div>
+			
 			<h4 title="Totais">Totais</h4>
 			<div>
+				<p>De janeiro de 2008 a dezembro de 2011 (quatro anos), foram inseridos 1.283 novos registros de rádios comunitárias no sistema.</p>
 				<h3>Por estado</h3>
 				<p>
 					<table cellspace="1" border="0" class="info">
@@ -197,10 +193,28 @@
 
 				</p>
 			</div>
-			<h4 title="Artigo 19">Artigo 19</h4>
+
+			<h4 title="Contribua!">Contribua!</h4>
 			<div>
-				<h3>Sobre o Artigo 19</h3>
-				<p>Colocar informações sobre o Article 19 aqui.</p>
+				<p>Qualquer informação sobre as rádios listadas no mapa nos ajudará a aprimorá-lo. Se tiver dados sobre o funcionamento das rádios, correções em relação aos dados oferecidos no mapa, relatos, denúncias etc., entre em contato conosco.</p>
+				<p>Basta escrever um e-mail para <a href="mailto:comunicacao@artigo19.org">comunicacao@artigo19.org</a>.</p>
+				<p>Qualquer dúvida, sugestão, reclamação ou elogio será muito bem recebido. Sua contribuição é importante para o desenvolvimento e aprimoramento do nosso trabalho.</p>
+			</div>
+
+			<h4 title="Sites relacionados">Sites relacionados</h4>
+			<div>
+				<h3>Sites relacionados</h3>
+				<p>Artigo 19: <a href="http://www.artigo19.org" target="_blank">http://www.artigo19.org</a></p>
+				<p>Agência Nacional de Telecomunicações: <a href="http://www.anatel.gov.br" target="_blank">http://www.anatel.gov.br</a></p>
+				<p>Associação Brasileira de Radiodifusão Comunitárias: <a href="http://www.abraconacional.org" target="_blank">http://www.abraconacional.org</a></p>
+				<p>Associação Mundial de Rádios Comunitárias: <a href="http://www.brasil.amarc.org/" target="_blank">http://www.brasil.amarc.org/</a></p>
+				<p>Criar Brasil: <a href="http://www.criarbrasil.org.br" target="_blank">http://www.criarbrasil.org.br</a></p>
+				<p>Instituto de Pesquisas e Projetos Sociais e Tecnológicos: <a href="http://www.ipso.org.br" target="_blank">http://www.ipso.org.br</a></p>
+				<p>Ministério das Comunicações: <a href="http://www.mc.gov.br" target="_blank">http://www.mc.gov.br</a></p>
+				<p>Oboré - Projetos Especiais em Comunicações e Artes: <a href="http://www.obore.com" target="_blank">http://www.obore.com</a></p>
+				<p>Observatório do Direito à Comunicação: <a href="http://www.direitoacomunicacao.org.br" target="_blank">http://www.direitoacomunicacao.org.br</a></p>
+				<p>Observatório Nacional de Inclusão Digital: <a href="http://www.onid.org.br" target="_blank">http://www.onid.org.br</a></p>
+				<p>Radiotube: <a href="http://www.radiotube.org.br" target="_blank">http://www.radiotube.org.br</a></p>
 			</div>
 		</div>
 	</div>
