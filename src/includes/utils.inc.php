@@ -73,7 +73,9 @@ function query ($_szSql, $_bGetInserID = 0)
 	if ($con = @mysql_connect($UTIL['DBASE_HOST'], $UTIL['DBASE_USER'], $UTIL['DBASE_PASS']))
 	{
 		@mysql_select_db($UTIL['DBASE_BASE']); // Seleciona o bd
-
+		
+		mysql_set_charset('utf8');
+		
 		$sqlQuery = mysql_query($_szSql);
 
 		if (mysql_errno() != 0)
