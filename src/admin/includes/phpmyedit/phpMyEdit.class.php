@@ -2992,6 +2992,9 @@ function '.$this->js['prefix'].'filter_handler(theForm, theEvent)
 		$this->dbh = @ini_get('allow_persistent')
 			? @mysql_pconnect($this->hn, $this->un, $this->pw)
 			: @mysql_connect($this->hn, $this->un, $this->pw);
+			
+		mysql_set_charset('utf8');
+			
 		if (!$this->dbh) {
 			$this->error('could not connect to MySQL');
 			return false;
