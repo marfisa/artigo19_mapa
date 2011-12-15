@@ -66,7 +66,7 @@
 			
 			<h4 title="Metodologia">Metodologia</h4>
 			<div>
-				<h3>Metedologia usada no mapeamento</h3>
+				<h3>Metodologia usada no mapeamento</h3>
 				<p>O mapa das rádios comunitárias traz uma compilação das rádios comunitárias outorgadas pelo Ministério das Comunicações.</p>
 				<p>Os dados foram coletados no Sistema de Informação dos Serviços de Comunicação de Massa (Siscom), da Agência Nacional de Telecomunicações (Anatel) e estão disponíveis no site <a href="http://sistemas.anatel.gov.br/siscom" target="_blank">http://sistemas.anatel.gov.br/siscom</a>.  As estações foram buscadas no referido sistema, estado por estado. O serviço pesquisado foi Radiodifusão Comunitária (231).</p>
 				<p>O resultado da pesquisa foi comparado com as listas publicadas no site do Ministério Comunicações em PDF para constatação da atualidade dos dados.</p>
@@ -290,7 +290,7 @@
 		</td>
 	</tr>
 	</table>
-	<div id="rodape"><a href="http://www.article19.org/work/regions/latin-america/portuguese.html" target="_blank">Artigo 19 - Defendendo a liberdade de expressão e informação</a></div>
+	<div id="rodape"><a href="http://www.artigo19.org" target="_blank">Artigo 19 - Defendendo a liberdade de expressão e informação</a></div>
 
 </body>
 </html>
