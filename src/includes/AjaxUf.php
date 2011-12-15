@@ -19,8 +19,8 @@ if ($uf != NULL) {
 
 	while ($myMunicipio = mysql_fetch_array($resMunicipios)) {
 		$jsonOutput .= '      {' . "\r\n";
-		$jsonOutput .= '        "cod": "' . utf8_encode($myMunicipio['codigo']) . '",' . "\r\n";
-		$jsonOutput .= '        "nome": "' . utf8_encode($myMunicipio['nome']) . '"' . "\r\n";
+		$jsonOutput .= '        "cod": "' . $myMunicipio['codigo'] . '",' . "\r\n";
+		$jsonOutput .= '        "nome": "' . $myMunicipio['nome'] . '"' . "\r\n";
 		$jsonOutput .= '      },' . "\r\n";
 	}
 		

@@ -122,11 +122,11 @@
 	while($ponto = mysql_fetch_array($resPontos))
 	{
 		echo("						<tr{$corFundo}>\r\n");
-		echo("							<td>" . utf8_encode($ponto['nome']) . "</td>\r\n");
-		echo("							<td>" . utf8_encode($ponto['lic']) . "</td>\r\n");
-		echo("							<td>" . utf8_encode($ponto['plic']) . "</td>\r\n");
-		echo("							<td>" . utf8_encode($ponto['nlic']) . "</td>\r\n");
-		echo("							<td>" . utf8_encode($ponto['total']) . "</td>\r\n");
+		echo("							<td>" . $ponto['nome'] . "</td>\r\n");
+		echo("							<td>" . $ponto['lic'] . "</td>\r\n");
+		echo("							<td>" . $ponto['plic'] . "</td>\r\n");
+		echo("							<td>" . $ponto['nlic'] . "</td>\r\n");
+		echo("							<td>" . $ponto['total'] . "</td>\r\n");
 		echo("						</tr>\r\n");
 		
 		if ($corFundo == " class=\"c2\"")

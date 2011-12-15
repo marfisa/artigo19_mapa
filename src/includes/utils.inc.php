@@ -120,9 +120,9 @@ function montaSelect($sMySQL, $sOptionName, $sOptionValue, $sValorSelected =  0,
 	while ($myDados = mysql_fetch_array($resMySQL))
 	{
 		echo(str_repeat("	",$iTabs));
-		echo('<option value="' . utf8_encode($myDados[$sOptionValue]) . '"');
+		echo('<option value="' . $myDados[$sOptionValue] . '"');
 		if ($myDados[$sOptionValue] == $sValorSelected) echo(" selected");
-		echo('>' . utf8_encode($myDados[$sOptionName]) . '</option>' . "\r\n");
+		echo('>' . $myDados[$sOptionName] . '</option>' . "\r\n");
 	}
 
 }

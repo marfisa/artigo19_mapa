@@ -161,9 +161,9 @@ $opts['fdd']['licenca'] = array(
   'name'     => 'Licen&ccedil;a',
   'values2'  =>
     array(
-        'definitiva' =>  utf8_decode('Licença definitiva'),
-        'provisoria' =>  utf8_decode('Licença provisória'),
-    	'sem' => utf8_decode('Outorgada, sem licença'),
+        'definitiva' =>  'Licença definitiva',
+        'provisoria' =>  'Licença provisória',
+    	'sem' => 'Outorgada, sem licença',
     ),  
   'select'   => 'T',
   'maxlen'   => 4,
@@ -207,7 +207,7 @@ $opts['fdd']['visivel'] = array(
   'values2'  =>
     array(
         '1' =>  'Sim',
-        '0' =>  utf8_decode('Não'),
+        '0' =>  'Não',
     ),
   'select'   => 'T',
   'maxlen'   => 4,

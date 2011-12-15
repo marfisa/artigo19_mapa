@@ -34,7 +34,7 @@ if (isset($_GET['pchave'])) {
 	for ($i=0; $i<count($palavraschave); $i++) {
 		$sqlBusca .= "(";
 		for ($j=0; $j<count($camposSearch); $j++) {
-			$sqlBusca .= "(`{$camposSearch[$j]}` LIKE '%" . utf8_encode($palavraschave[$i]) . "%') OR ";
+			$sqlBusca .= "(`{$camposSearch[$j]}` LIKE '%" . $palavraschave[$i] . "%') OR ";
 	  	}
 		$sqlBusca = substr($sqlBusca, 0, -4);
 		$sqlBusca .= ") AND ";
@@ -135,5 +135,5 @@ function limpaString($string)	{
 	}
 
 	$string = htmlspecialchars($string, ENT_COMPAT);
-	return utf8_encode(str_replace(array("\r\n","\n"),array(" "," "),$string));
+	return str_replace(array("\r\n","\n"),array(" "," "),$string);
 }

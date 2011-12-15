@@ -167,5 +167,5 @@ echo($jsonOutput);
   
 function limpaString($string) {
 	$string = htmlspecialchars($string, ENT_QUOTES);
-	return utf8_encode(str_replace(array("\r\n","\n"),array(" "," "),$string));
+	return str_replace(array("\r\n","\n"),array(" "," "),$string);
 }

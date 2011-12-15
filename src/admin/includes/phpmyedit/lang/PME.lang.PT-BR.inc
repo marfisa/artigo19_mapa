@@ -4,7 +4,7 @@
  * phpMyEdit language file
  *
  * language: portuguese (brazilian)
- * encoding: iso-8859-1
+ * encoding: utf-8
  * date: 2002-12-23, 2003-01-14, 2003-05-17, 2004-01-21
  * author: Roberto Cohen <roberto.cohen@fireman.com.br>
  */
@@ -18,11 +18,11 @@ return Array(
 		'Delete'        =>'Remove',
 		'View'       	=>'Visualiza',
 		'Prev'          =>'Anterior',
-		'Next'          =>'Próximo',
+		'Next'          =>'PrÃ³ximo',
 		'First'         =>'Primeiro', 
-		'Last'          =>'Último',  
+		'Last'          =>'Ãšltimo',  
 		'Go to'         =>'Vai para', 
-		'Page'          =>'Página',
+		'Page'          =>'PÃ¡gina',
 		'Records'       =>'Registros',
 		'Save'          =>'Salva',
 		'More'          =>'Mais',
@@ -45,7 +45,7 @@ return Array(
 		'months' =>	Array(
 				'01'=>'Janeiro',
 				'02'=>'Fevereiro',
-				'03'=>'Março',
+				'03'=>'MarÃ§o',
 				'04'=>'Abril',
 				'05'=>'Maio',
 				'06'=>'Junho',
@@ -56,7 +56,7 @@ return Array(
 				'11'=>'Novembro',
 				'12'=>'Dezembro'),
 		// phpMyEdit-report
-		'Gerar relatório'			=> 'Make report',
+		'Gerar relatÃ³rio'			=> 'Make report',
 		'Selecionar campos'			=> 'Select fields',
 		'Registros por tela'	=> 'Records per screen',
 		);
