@@ -26,6 +26,7 @@
 		<div id="box_tabinfo">
 			<h4 title="Histórico">Histórico</h4>
 			<div>
+				<h3>Histórico</h3>
 				<p>O Mapa das Rádios Comunitárias nasceu em 2008, de uma parceria entre o Instituto de Pesquisa e Projetos Sociais e Tecnológicos – IPSO e
 				a ARTIGO 19. Foi atualizado e retomado somente pela ARTIGO 19 em 2011 como o primeiro passo para a construção do Observatório de Comunicação Comunitária.</p>
 				<p><B>Ficha técnica</B><br />
@@ -78,6 +79,7 @@
 			
 			<h4 title="Totais">Totais</h4>
 			<div>
+				<h3>Totais</h3>
 				<p>De janeiro de 2008 a dezembro de 2011 (quatro anos), foram inseridos 1.283 novos registros de rádios comunitárias no sistema.</p>
 				<h3>Por estado</h3>
 				<p>
@@ -196,6 +198,7 @@
 
 			<h4 title="Contribua!">Contribua!</h4>
 			<div>
+				<h3>Contribua!</h3>
 				<p>Qualquer informação sobre as rádios listadas no mapa nos ajudará a aprimorá-lo. Se tiver dados sobre o funcionamento das rádios, correções em relação aos dados oferecidos no mapa, relatos, denúncias etc., entre em contato conosco.</p>
 				<p>Basta escrever um e-mail para <a href="mailto:comunicacao@artigo19.org">comunicacao@artigo19.org</a>.</p>
 				<p>Qualquer dúvida, sugestão, reclamação ou elogio será muito bem recebido. Sua contribuição é importante para o desenvolvimento e aprimoramento do nosso trabalho.</p>
